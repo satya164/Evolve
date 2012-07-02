@@ -910,11 +910,12 @@ GtkComboBox .menuitem *:hover {
 
 .notebook tab.top {
     padding: 5px 3px 1px;
-    border-bottom: 0;
+    border-radius: 2px 0;
 }
 
 .notebook tab.bottom {
     padding: 1px 3px 5px;
+    border-radius: 0 2px;
 }
 
 .notebook tab.left,
