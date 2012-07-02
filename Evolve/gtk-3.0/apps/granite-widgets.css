@@ -147,9 +147,7 @@
     border-color: shade (@theme_bg_color, 0.8);
 }
  
-.album-list-view * {
-    -adwaita-focus-border-color: transparent;
-    
+.album-list-view * {    
     background-image: none;
     background-color: transparent;
     border-radius: 0;

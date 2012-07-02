@@ -1,6 +1,6 @@
 /* default */
 * {
-    engine: adwaita;
+    engine: none;
 
     border-width: 1px;
     
@@ -24,8 +24,6 @@
     -GtkMenu-vertical-padding: 0;  
     -GtkMenuBar-internal-padding: 0;
     -GtkMenuItem-arrow-scaling: 0.5;
-    -GtkNotebook-tab-overlap: 1;
-    -GtkNotebook-tab-curvature: 2;
     -GtkNotebook-initial-gap: 0;
     -GtkPaned-handle-size: 1;
     -GtkProgressBar-min-horizontal-bar-height: 21;
@@ -59,10 +57,6 @@
     -GtkWindow-resize-grip-width: 0;
     -GtkWindow-resize-grip-height: 0;
     -WnckTasklist-fade-overlay-rect: 0;
-
-    -adwaita-focus-border-color: alpha (@theme_selected_bg_color, 0.5);
-    -adwaita-focus-border-radius: 2;
-    -adwaita-focus-border-dashes: 0;
 }
 
 GtkWindow {
@@ -104,6 +98,48 @@ GtkWindow {
     color: @theme_selected_fg_color;
 }
 
+/******************
+ * common effects *
+ ******************/
+.entry:focus {
+    box-shadow: 1 2 inset alpha (@theme_selected_bg_color, 0.1),
+                1 1 inset alpha (@theme_selected_bg_color, 0.1),
+                -1 -1 inset alpha (@theme_selected_bg_color, 0.1);
+}
+
+/* draw borders using box shadow */
+GtkScale.slider,
+GtkScale.trough {
+    box-shadow: 1 0 inset shade (@theme_bg_color, 0.7),
+                0 1 inset shade (@theme_bg_color, 0.7),
+                -1 0 inset shade (@theme_bg_color, 0.7),
+                0 -1 inset shade (@theme_bg_color, 0.7);
+}
+
+.menubar .menuitem .scale.highlight.left,
+.scale.highlight.left,
+.scale.highlight.bottom {
+    box-shadow: 1 0 inset shade (@theme_selected_bg_color, 0.9),
+                0 1 inset shade (@theme_selected_bg_color, 0.9),
+                -1 0 inset shade (@theme_selected_bg_color, 0.9),
+                0 -1 inset shade (@theme_selected_bg_color, 0.9);
+}
+
+GtkScale.slider:insensitive,
+GtkScale.trough:insensitive,
+.scale.highlight.left:insensitive,
+.scale.highlight.bottom:insensitive {
+    box-shadow: 1 0 inset shade (@theme_bg_color, 0.8),
+                0 1 inset shade (@theme_bg_color, 0.8),
+                -1 0 inset shade (@theme_bg_color, 0.8),
+                0 -1 inset shade (@theme_bg_color, 0.8);
+}
+
+/* disable box shadow */
+GtkSwitch.slider:insensitive {
+    box-shadow: none;
+}
+
 /*************
  * assistant *
  *************/
@@ -135,8 +171,6 @@ GtkAssistant .sidebar {
  **********/
 .button {
     padding: 3px;
-
-    -adwaita-focus-border-color: transparent;
 }
 
 GtkComboBox,
@@ -227,8 +261,6 @@ GtkComboBox.combobox-entry .button:insensitive,
                                      from (mix (shade (@theme_selected_bg_color, 1.16), @theme_bg_color, 0.3)),
                                      to (mix (shade (@theme_selected_bg_color, 0.84), @theme_bg_color, 0.3)));
     border-color: mix (shade (@theme_selected_bg_color, 0.8), @theme_bg_color, 0.3);
-
-    -adwaita-focus-border-color: transparent;
 }
 
 .button.default:hover {
@@ -252,7 +284,7 @@ GtkComboBox.combobox-entry .button:insensitive,
     border-color: mix (shade (@theme_selected_bg_color, 0.7), @theme_bg_color, 0.3);
 }
 
-/* Middle button */
+/* middle button */
 .linked .entry,
 .linked .button,
 .linked .button:active,
@@ -269,7 +301,7 @@ GtkComboBox.combobox-entry .button:insensitive,
     border-radius: 0;
 }
 
-/* Leftmost button */
+/* leftmost button */
 .linked .entry:first-child,
 .linked .button:first-child,
 .linked .button:active:first-child,
@@ -288,7 +320,7 @@ GtkComboBox.combobox-entry .button:insensitive,
     border-top-right-radius: 0;
 }
 
-/* Rightmost button */
+/* rightmost button */
 .linked .entry:last-child,
 .linked .button:last-child,
 .linked .button:active:last-child,
@@ -306,7 +338,7 @@ GtkComboBox.combobox-entry .button:insensitive,
     border-top-left-radius: 0;
 }
 
-/* Linked single button */
+/* linked single button */
 .linked .entry:only-child,
 .linked .button:only-child,
 .linked .button:active:only-child,
@@ -370,8 +402,6 @@ column-header .button:active,
 .notebook column-header .button:active {
     border-radius: 0;
     border-width: 0 1px 1px 0;
-
-    -adwaita-focus-border-color: transparent;
 }
 
 column-header .button,
@@ -485,12 +515,6 @@ GtkCalendar.highlight {
     background-color: @theme_selected_bg_color;
 
     color: @theme_selected_fg_color;
-}
-
-.entry:focus {
-    box-shadow: 1 2 inset alpha (@theme_selected_bg_color, 0.1),
-                1 1 inset alpha (@theme_selected_bg_color, 0.1),
-                -1 -1 inset alpha (@theme_selected_bg_color, 0.2);
 }
 
 .entry:insensitive {
@@ -882,8 +906,6 @@ GtkComboBox .menuitem *:hover {
                                      from (shade (@theme_bg_color, 0.97)),
                                      to (shade (@theme_bg_color, 0.92)));
     border-color: shade (@theme_bg_color, 0.8);
-
-    -adwaita-focus-border-color: transparent;
 }
 
 .notebook tab:active {
@@ -911,8 +933,6 @@ GtkComboBox .menuitem *:hover {
 .notebook tab.right:active {
     background-image: none;
     background-color: shade (@theme_bg_color, 1.12);
-
-    -adwaita-selected-tab-color: transparent;
 }
 
 /******************
@@ -933,12 +953,8 @@ GtkProgressBar {
     border-radius: 2px;
     border-width: 1px;
     padding: 0;
-
-    -adwaita-focus-border-color: transparent;
 }
 
-.menubar .menuitem .scale.highlight.left,
-.scale.highlight.left,
 .progressbar,
 .progressbar row,
 .progressbar row:hover,
@@ -953,7 +969,6 @@ GtkProgressBar {
 }
 
 
-.scale.highlight.bottom,
 .progressbar.vertical {
     background-image: -gtk-gradient (linear, left top, right top,
                                     from (shade (@theme_selected_bg_color, 1.1)),
@@ -961,20 +976,6 @@ GtkProgressBar {
     border-style: solid;
     border-width: 1px;
     border-color: shade (@theme_selected_bg_color, 0.9);
-}
-
-.scale.highlight.left:insensitive {
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@theme_bg_color, 0.99)),
-                                     to (shade (@theme_bg_color, 0.95)));
-    border-color: shade (@theme_bg_color, 0.75);
-}
-
-.scale.highlight.bottom:insensitive {
-    background-image: -gtk-gradient (linear, left top, right top,
-                                     from (shade (@theme_bg_color, 0.99)),
-                                     to (shade (@theme_bg_color, 0.95)));
-    border-color: shade (@theme_bg_color, 0.75);
 }
 
 .trough,
@@ -1016,10 +1017,6 @@ GtkScale.slider {
                                      to (shade (@button_bg_color, 0.97)));
 
     border-radius: 7px;
-    box-shadow: 1 0 inset shade (@theme_bg_color, 0.8),
-                0 1 inset shade (@theme_bg_color, 0.8),
-                -1 0 inset shade (@theme_bg_color, 0.8),
-                0 -1 inset shade (@theme_bg_color, 0.8);
 }
 
 GtkScale.slider:hover {
@@ -1054,6 +1051,55 @@ GtkScale.slider.vertical:insensitive {
 
 GtkScale.mark {
     border-color: shade (@theme_bg_color, 0.8);
+}
+
+GtkScale.trough {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 1.1)),
+                                     to (shade (@theme_bg_color, 1.12)));
+    border-color: transparent;
+    border-width: 5px 0;
+    border-radius: 7px;
+}
+
+GtkScale.trough.vertical {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@theme_bg_color, 1.1)),
+                                     to (shade (@theme_bg_color, 1.12)));
+    border-color: transparent;
+    border-width: 0 5px;
+    border-radius: 7px;
+}
+
+.menubar .menuitem .scale.highlight.left,
+.scale.highlight.left {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                    from (shade (@theme_selected_bg_color, 1.1)),
+                                    to (shade (@theme_selected_bg_color, 0.9)));
+    /* we will draw the border using box shadow for now */
+    border-color: transparent;
+}
+
+.scale.highlight.bottom {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                    from (shade (@theme_selected_bg_color, 1.1)),
+                                    to (shade (@theme_selected_bg_color, 0.9)));
+    /* we will draw the border using box shadow for now */
+    border-color: transparent;
+}
+
+GtkScale.trough:insensitive,
+.scale.highlight.left:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.99)),
+                                     to (shade (@theme_bg_color, 0.95)));
+}
+
+GtkScale.trough.vertical:insensitive,
+.scale.highlight.bottom:insensitive {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@theme_bg_color, 0.99)),
+                                     to (shade (@theme_bg_color, 0.95)));
 }
 
 /*************
@@ -1500,7 +1546,6 @@ GtkTextView {
  * treeview *
  ************/
 GtkTreeView {
-    -adwaita-focus-border-radius: 0;
 }
 
 GtkTreeView.dnd {
@@ -1521,6 +1566,14 @@ GtkTreeView row:nth-child(even) {
 
 GtkTreeView row:nth-child(odd) {
     background-color: shade (@theme_base_color, 1.0);
+}
+
+/***********
+ * gtkhtml *
+ ***********/
+GtkHTML {
+    background-color: @theme_base_color;
+    color: @theme_text_color;
 }
 
 /************

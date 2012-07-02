@@ -69,27 +69,9 @@ NautilusSearchBar .entry:focus {
     padding-right: 3px;
 }
 
-/* notebook */
-NautilusWindow .notebook {
-    background-color: @theme_base_color;
-}
-
-NautilusWindow .notebook tab:active {
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@theme_base_color, 1.0)),
-                                     to (shade (@theme_base_color, 1.0)));
-}
-
 /* inactive pane */
-.nautilus-inactive-pane .view,
-.nautilus-inactive-pane .notebook {
+.nautilus-inactive-pane .view {
 background-color: shade (@theme_base_color, 0.97);
-}
-
-.nautilus-inactive-pane .notebook tab:active {
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@theme_base_color, 0.97)),
-                                     to (shade (@theme_base_color, 0.97)));
 }
 
 /* sidebar */

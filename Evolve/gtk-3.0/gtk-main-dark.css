@@ -36,7 +36,10 @@
 
 @import url("gtk-widgets.css");
 @import url("gtk-widgets-assets.css");
-@import url("apps/gnome-panel.css");
-@import url("apps/gnome-terminal.css");
+@import url("gtk-widgets-backdrop.css");
 @import url("apps/nautilus.css");
+@import url("apps/gnome-control-center.css");
+@import url("apps/gnome-terminal.css");
+@import url("apps/gnome-panel.css");
+@import url("apps/granite-widgets.css");
 @import url("apps/unity.css");
