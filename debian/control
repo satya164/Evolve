@@ -8,6 +8,6 @@ Homepage: http://satya164.deviantart.com
 
 Package: evolve-gtk-theme
 Architecture: all
-Depends: ${misc:Depends}, gtk2-engines-murrine (>= 0.90.3+git20100810), gnome-themes-standard (>= 3.4.1-0ubuntu1)
+Depends: ${misc:Depends}, gtk2-engines-murrine (>= 0.90.3+git20100810)
 Description: Evolve GTK Theme
  Evolve is a simple and minimal light theme for Gnome.
