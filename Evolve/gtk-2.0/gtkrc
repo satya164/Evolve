@@ -382,31 +382,24 @@ class "GtkHandleBox" style "evolve-toolbar"
 # Panels
 
 style "evolve-panel" {
-	xthickness = 0
-	ythickness = 0
+	xthickness = 2
 
 	bg[NORMAL] = @bg_color
-	bg[SELECTED] = shade (0.85, @bg_color)
-	bg[PRELIGHT] = shade (0.85, @bg_color)
-	bg[ACTIVE] = shade (0.60, @bg_color)
-	bg[INSENSITIVE] = shade (0.60, @bg_color)
+	bg[PRELIGHT] = shade (1.1, @bg_color)
+	bg[ACTIVE] = shade (0.9, @bg_color)
+	bg[SELECTED] = shade (0.97, @bg_color)
+
 	fg[NORMAL] = @fg_color
 	fg[PRELIGHT] = @fg_color
-	fg[SELECTED] = @selected_fg_color 
-	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
+	fg[SELECTED] = @fg_color 
+	fg[ACTIVE] = @fg_color
+
 	text[NORMAL] = @text_color
 	text[PRELIGHT] = @text_color
-	text[SELECTED] = @selected_fg_color
+	text[SELECTED] = @text_color
 	text[ACTIVE] = @text_color
-	text[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
 	
 	engine "murrine" {
-		glazestyle = 0
-		gradient_shades = { 1.2, 1.1, 1.1, 1.0 }
-		highlight_shade = 1.0
-		lightborderstyle = 1
-		scrollbarstyle = 0
 		roundness = 0
 	}
 }
@@ -415,6 +408,7 @@ widget "*PanelWidget*" style "evolve-panel"
 widget "*PanelApplet*" style "evolve-panel"
 widget "*fast-user-switch*" style "evolve-panel"
 widget "*CPUFreq*Applet*" style "evolve-panel"
+widget "*indicator-applet*" style "evolve-panel"
 class "PanelApp*" style "evolve-panel"
 class "PanelToplevel*" style "evolve-panel"
 widget_class "*PanelToplevel*" style "evolve-panel"
@@ -422,17 +416,10 @@ widget_class "*notif*" style "evolve-panel"
 widget_class "*Notif*" style "evolve-panel"
 widget_class "*Tray*" style "evolve-panel" 
 widget_class "*tray*" style "evolve-panel"
+widget_class "*computertemp*" style "evolve-panel"
 widget_class "*Applet*Tomboy*" style "evolve-panel"
 widget_class "*Applet*Netstatus*" style "evolve-panel"
 widget "*gdm-user-switch-menubar*" style "evolve-panel"
-
-# widget_class "*Mail*" style "evolve-panel" # Disabled to fix Evolution bug
-# class "*Panel*" style "evolve-panel" # Disabled to fix bug
-
-# XFCE Panel
-
-widget "*Xfce*Panel*" style "evolve-panel"
-class "*Xfce*Panel*" style "evolve-panel"
 
 style "bold-panel-item" {
 	font_name = "Bold"
@@ -444,6 +431,74 @@ style "bold-panel-item" {
 
 widget "*Panel*MenuBar*" style "bold-panel-item"
 widget "*gimmie*" style "bold-panel-item"
+
+# widget_class "*Mail*" style "evolve-panel" # Disabled to fix Evolution bug
+# class "*Panel*" style "evolve-panel" # Disabled to fix bug
+
+# XFCE Styles
+
+style "xfce-header"
+{
+	bg[NORMAL]	 = shade (0.9, @bg_color)
+	base[NORMAL]	 = shade (1.18, @bg_color)
+	engine "murrine"
+	{
+		textstyle = 1
+	}
+}
+
+style "xfdesktop-windowlist"
+{
+	bg[NORMAL] = @base_color
+	fg[INSENSITIVE] = shade (0.95, @base_color)
+	text[INSENSITIVE] = shade (0.95, @base_color)
+}
+
+style "xfdesktop-icon-view" {
+    font_name = "normal"
+    XfdesktopIconView::label-alpha = 30
+    XfdesktopIconView::selected-label-alpha = 60
+    XfdesktopIconView::shadow-color = shade (1.05, @fg_color)
+    XfdesktopIconView::selected-shadow-color = @fg_color
+    XfdesktopIconView::shadow-x-offset = -1
+    XfdesktopIconView::selected-shadow-x-offset = -1
+    XfdesktopIconView::shadow-y-offset = -1
+    XfdesktopIconView::selected-shadow-y-offset = -1
+    fg[NORMAL] = @selected_fg_color
+    fg[ACTIVE] = @selected_fg_color
+    engine "murrine"
+    {
+	textstyle = 0
+	text_shade = 0.05
+    }
+}
+
+style "xfwm-tabwin"
+{
+	Xfwm4TabwinWidget::border-width = 1
+	Xfwm4TabwinWidget::icon-size = 64
+	engine "murrine"
+	{
+		focusstyle = 0
+	}
+}
+
+style "xfsm-logout"
+{
+	engine "murrine"
+        {
+		highlight_shade = 1.00
+        }	
+}
+
+widget "*Xfce*Panel*" style "evolve-panel"
+class "*Xfce*Panel*" style "evolve-panel"
+
+widget_class "*XfceHeading*"			style "xfce-header"
+widget_class "*XfceDesktop*"			style "xfdesktop-windowlist"
+widget_class "*XfdesktopIconView*"		style "xfdesktop-icon-view"
+widget "xfwm4-tabwin*"				style "xfwm-tabwin"
+widget_class "*XfsmLogoutDialog*"		style "xfsm-logout"
 
 # Chromium Styles
 
@@ -627,14 +682,6 @@ widget "*HandleBox*LPEToolToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*DropperToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*ConnectorToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*PaintbucketToolbar*" style "inkscape-toolbar-fix"
-
-style "xfdesktop-icon-view" {
-	engine "murrine" {
-		textstyle = 0
-	}
-}
-
-widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
 
 # Performance Fixes
 
