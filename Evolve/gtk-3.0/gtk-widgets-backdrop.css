@@ -1,0 +1,176 @@
+/**********
+ * states *
+ **********/
+*:selected:backdrop,
+*:selected:focus:backdrop {
+	background-color: @backdrop_selected_bg_color;
+	color: @backdrop_selected_fg_color;
+}
+
+/**********
+ * button *
+ **********/
+/* default button */
+.button.default:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (mix (shade (@backdrop_selected_bg_color, 1.16), @theme_bg_color, 0.3)),
+                                     to (mix (shade (@backdrop_selected_bg_color, 0.84), @theme_bg_color, 0.3)));
+    border-color: mix (shade (@backdrop_selected_bg_color, 0.8), @theme_bg_color, 0.3);
+
+    -adwaita-focus-border-color: transparent;
+}
+
+.button.default:hover:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (mix (shade (@backdrop_selected_bg_color, 1.21), @theme_bg_color, 0.3)),
+                                     to (mix (shade (@backdrop_selected_bg_color, 0.89), @theme_bg_color, 0.3)));
+    border-color: mix (shade (@backdrop_selected_bg_color, 0.83), @theme_bg_color, 0.3);
+}
+
+.button.default:active:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (mix (shade (@backdrop_selected_bg_color, 0.95), @theme_bg_color, 0.3)),
+                                     to (mix (shade (@backdrop_selected_bg_color, 1.05), @theme_bg_color, 0.3)));
+    border-color: mix (shade (@backdrop_selected_bg_color, 0.7), @theme_bg_color, 0.3);
+}
+
+.button.default:active:hover:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (mix (shade (@backdrop_selected_bg_color, 1.0), @theme_bg_color, 0.3)),
+                                     to (mix (shade (@backdrop_selected_bg_color, 1.1), @theme_bg_color, 0.3)));
+    border-color: mix (shade (@backdrop_selected_bg_color, 0.7), @theme_bg_color, 0.3);
+}
+
+/****************
+ * cell and row *
+ ****************/
+row:selected:backdrop,
+row:selected:focus:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@backdrop_selected_bg_color, 1.1)),
+                                     to (shade (@backdrop_selected_bg_color, 0.9)));
+    border-color: shade (@backdrop_selected_bg_color, 0.97);
+
+    color: @backdrop_selected_fg_color;
+}
+
+/************
+ * iconview *
+ ************/
+GtkIconView.view.cell:selected:backdrop,
+GtkIconView.view.cell:selected:focus:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@backdrop_selected_bg_color, 1.0)),
+                                     to (shade (@backdrop_selected_bg_color, 0.9)));
+
+    color: @backdrop_selected_fg_color;
+}
+
+/*************************
+ * progressbar and scale *
+ *************************/
+.scale.highlight.left:backdrop,
+.progressbar:backdrop,
+.progressbar row:backdrop,
+.progressbar row:selected:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                    from (shade (@backdrop_selected_bg_color, 1.1)),
+                                    to (shade (@backdrop_selected_bg_color, 0.9)));
+    border-color: shade (@backdrop_selected_bg_color, 0.9);
+}
+
+.scale.highlight.bottom:backdrop,
+.progressbar.vertical:backdrop,
+.progressbar.vertical row:backdrop,
+.progressbar.vertical row:selected:backdrop {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                    from (shade (@backdrop_selected_bg_color, 1.1)),
+                                    to (shade (@backdrop_selected_bg_color, 0.9)));
+    border-color: shade (@backdrop_selected_bg_color, 0.9);
+}
+
+.scale.highlight.left:insensitive:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.99)),
+                                     to (shade (@theme_bg_color, 0.95)));
+    border-color: shade (@theme_bg_color, 0.75);
+}
+
+.scale.highlight.bottom:insensitive:backdrop {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@theme_bg_color, 0.99)),
+                                     to (shade (@theme_bg_color, 0.95)));
+    border-color: shade (@theme_bg_color, 0.75);
+}
+
+/**********
+ * switch *
+ **********/
+GtkSwitch.trough:active:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@backdrop_selected_bg_color, 0.85)),
+                                     to (shade (@backdrop_selected_bg_color, 0.97)));
+
+    color: @backdrop_selected_fg_color;
+    border-color: shade (@backdrop_selected_bg_color, 0.8);
+}
+
+/************
+ * viewport *
+ ************/
+.view:selected:backdrop,
+.view:selected:focus:backdrop {
+    background-color: @backdrop_selected_bg_color;
+    color: @backdrop_selected_fg_color;
+}
+
+/*******************
+ * check and radio *
+ *******************/
+.check:active:backdrop,
+.check row:selected:active:backdrop,
+.check row:selected:focus:active:backdrop {
+    background-image: url("assets/checkbox-checked-backdrop.png");
+}
+
+.check:active:insensitive:backdrop,
+.check row:selected:active:insensitive:backdrop,
+.check row:selected:focus:active:insensitive:backdrop {
+    background-image: url("assets/checkbox-checked-insensitive.png");
+}
+
+.check:inconsistent:backdrop,
+.check row:selected:inconsistent:backdrop,
+.check row:selected:focus:inconsistent:backdrop {
+    background-image: url("assets/checkbox-mixed-backdrop.png");
+}
+
+.check:inconsistent:insensitive:backdrop,
+.check row:selected:inconsistent:insensitive:backdrop,
+.check row:selected:focus:inconsistent:insensitive:backdrop {
+    background-image: url("assets/checkbox-mixed-insensitive.png");
+}
+
+.radio:active:backdrop,
+.radio row:selected:active:backdrop,
+.radio row:selected:focus:active:backdrop {
+    background-image: url("assets/radio-selected-backdrop.png");
+}
+
+.radio:active:insensitive:backdrop,
+.radio row:selected:active:insensitive:backdrop,
+.radio row:selected:focus:active:insensitive:backdrop {
+    background-image: url("assets/radio-selected-insensitive.png");
+}
+
+.radio:inconsistent:backdrop,
+.radio row:selected:inconsistent:backdrop,
+.radio row:selected:focus:inconsistent:backdrop {
+    background-image: url("assets/radio-mixed-backdrop.png");
+}
+
+.radio:inconsistent:insensitive:backdrop,
+.radio row:selected:inconsistent:insensitive:backdrop,
+.radio row:selected:focus:inconsistent:insensitive:backdrop {
+    background-image: url("assets/radio-mixed-insensitive.png");
+}

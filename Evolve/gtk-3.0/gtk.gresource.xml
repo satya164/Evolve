@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/evolve">
+    <file preprocess="to-pixdata">assets/checkbox-checked-backdrop.png</file>
+    <file preprocess="to-pixdata">assets/checkbox-checked-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/checkbox-checked.png</file>
+    <file preprocess="to-pixdata">assets/checkbox-mixed-backdrop.png</file>
+    <file preprocess="to-pixdata">assets/checkbox-mixed-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/checkbox-mixed.png</file>
+    <file preprocess="to-pixdata">assets/checkbox-unchecked-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/checkbox-unchecked.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-checkbox-checked-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-checkbox-checked.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-checkbox-checked-selected.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-checkbox-mixed-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-checkbox-mixed.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-checkbox-mixed-selected.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-radio-checked-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-radio-checked.png</file>
+    <file preprocess="to-pixdata">assets/menuitem-radio-checked-selected.png</file>
+    <file preprocess="to-pixdata">assets/radio-mixed-backdrop.png</file>
+    <file preprocess="to-pixdata">assets/radio-mixed-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/radio-mixed.png</file>
+    <file preprocess="to-pixdata">assets/radio-selected-backdrop.png</file>
+    <file preprocess="to-pixdata">assets/radio-selected-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/radio-selected.png</file>
+    <file preprocess="to-pixdata">assets/radio-unselected-insensitive.png</file>
+    <file preprocess="to-pixdata">assets/radio-unselected.png</file>
+    <file compressed="true">apps/gedit.css</file>
+    <file compressed="true">apps/gnome-control-center.css</file>
+    <file compressed="true">apps/gnome-panel.css</file>
+    <file compressed="true">apps/gnome-terminal.css</file>
+    <file compressed="true">apps/granite-widgets.css</file>
+    <file compressed="true">apps/nautilus.css</file>
+    <file compressed="true">apps/unity.css</file>
+    <file compressed="true">gtk-main.css</file>
+    <file compressed="true">gtk-main-dark.css</file>
+    <file compressed="true">gtk-widgets-assets.css</file>
+    <file compressed="true">gtk-widgets-backdrop.css</file>
+    <file compressed="true">gtk-widgets.css</file>
+  </gresource>
+</gresources>
