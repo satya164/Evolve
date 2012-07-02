@@ -540,17 +540,11 @@ GtkCalendar.highlight {
  * expander *
  ************/
 .expander {
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: alpha (@theme_fg_color, 0.5);
-
-    color: alpha (@theme_fg_color, 0.6);
-    background-color: @theme_base_color;
+    color: alpha (@theme_fg_color, 0.7);
 }
 
 .expander:hover {
-    background-color: shade (@theme_bg_color, 1.02);
+    color: alpha (@theme_fg_color, 0.8);
 }
 
 /*********
