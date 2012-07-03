@@ -26,7 +26,6 @@
     <file preprocess="to-pixdata">assets/radio-selected.png</file>
     <file preprocess="to-pixdata">assets/radio-unselected-insensitive.png</file>
     <file preprocess="to-pixdata">assets/radio-unselected.png</file>
-    <file compressed="true">apps/gedit.css</file>
     <file compressed="true">apps/gnome-control-center.css</file>
     <file compressed="true">apps/gnome-panel.css</file>
     <file compressed="true">apps/gnome-terminal.css</file>
