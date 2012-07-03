@@ -1230,7 +1230,9 @@ GtkScrolledWindow.frame {
     border-color: shade (@button_insensitive_bg_color, 0.9);
 }
 
-.menuitem.separator {
+.menuitem.separator,
+.menubar .menuitem.separator,
+.primary-toolbar .menuitem.separator {
     -GtkMenuItem-horizontal-padding: 0;
     -GtkWidget-separator-height: 1;
 
