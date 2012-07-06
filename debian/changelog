@@ -1,3 +1,10 @@
+evolve-gtk-theme (2012.07.05-0~satya164~precise) precise; urgency=medium
+
+  * Fixed a bug in GtkHTML, removed Adwaita dependency
+
+ -- Satyajit Sahoo <satyajit.happy@gmail.com>  Thu, 05 July 2012 05:00:00 +0000
+
+
 evolve-gtk-theme (2012.06.25-0~satya164~precise) precise; urgency=medium
 
   * Added support for granite dynamic notebook widget
