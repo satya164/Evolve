@@ -1,7 +1,8 @@
-source_dir=Evolve/gtk-3.0
+COMPILE=glib-compile-resources
+SOURCE_DIR=Evolve/gtk-3.0
 
 gtk.gresource:
-	glib-compile-resources --sourcedir=$(source_dir) $(source_dir)/gtk.gresource.xml
+	$(COMPILE) --sourcedir=$(SOURCE_DIR) $(SOURCE_DIR)/gtk.gresource.xml
 
 clean:
-	rm -f $(source_dir)/gtk.gresource
+	rm -f $(SOURCE_DIR)/gtk.gresource
