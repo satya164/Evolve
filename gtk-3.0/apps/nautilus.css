@@ -73,10 +73,3 @@ NautilusSearchBar .entry:focus {
 .nautilus-inactive-pane .view {
 background-color: shade (@theme_base_color, 0.97);
 }
-
-/* sidebar */
-NautilusWindow .sidebar .frame {
-    border-color: shade (@theme_bg_color, 0.9);
-    border-width: 1px 0px 0px 0px;
-    border-style: solid;
-}
