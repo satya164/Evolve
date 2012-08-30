@@ -4,15 +4,15 @@
 	<name>Evolve</name>
 	<author>Satyajit Sahoo</author>
 	<copyright>GPL</copyright>
-	<date>June, 2012</date>
+	<date>July, 2012</date>
 	<description>Evolve mutter theme</description>
 </info>
 
 <!-- ::: CONSTANTS ::: -->
-<constant name="C_border_focused" value="gtk:custom(wm_border_focused,shade/gtk:bg[NORMAL]/0.7)" />
-<constant name="C_border_unfocused" value="gtk:custom(wm_border_unfocused,shade/gtk:bg[NORMAL]/0.8)" />
-<constant name="C_title_focused" value="gtk:custom(wm_title_focused,blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.1)" />
-<constant name="C_title_unfocused" value="gtk:custom(wm_title_unfocused,blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.6)" />
+<constant name="C_border_focused" value="gtk:custom(wm_border_focused,shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/0.7)" />
+<constant name="C_border_unfocused" value="gtk:custom(wm_border_unfocused,shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/0.8)" />
+<constant name="C_title_focused" value="gtk:custom(wm_title_focused,shade/gtk:fg[NORMAL]/1.2)" />
+<constant name="C_title_unfocused" value="gtk:custom(wm_title_unfocused,shade/gtk:fg[NORMAL]/2.0)" />
 
 <!-- ::: GEOMETRY ::: -->
 <frame_geometry name="normal" title_scale="medium" rounded_top_left="5" rounded_top_right="5">
@@ -103,7 +103,7 @@
 
 <!-- ::: WINDOW DECORATIONS ::: -->
 <draw_ops name="entire_background_focused">
-	<rectangle color="gtk:custom(wm_bg,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="gtk:custom(wm_bg,gtk:custom(wm_bg,gtk:bg[NORMAL]))" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="entire_background_unfocused">
@@ -348,30 +348,54 @@
 <draw_ops name="menu_unfocused_pressed"></draw_ops>
 
 <!-- shade icon -->
-<draw_ops name="shade_focused"></draw_ops>
+<draw_ops name="shade_focused">
+	<image filename="shade_focused_normal.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="shade_focused_prelight"></draw_ops>
+<draw_ops name="shade_focused_prelight">
+	<image filename="shade_focused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="shade_focused_pressed"></draw_ops>
+<draw_ops name="shade_focused_pressed">
+	<image filename="shade_focused_pressed.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="shade_unfocused"></draw_ops>
+<draw_ops name="shade_unfocused">
+	<image filename="shade_unfocused.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="shade_unfocused_prelight"></draw_ops>
+<draw_ops name="shade_unfocused_prelight">
+	<include name="shade_focused_prelight" />
+</draw_ops>
 
-<draw_ops name="shade_unfocused_pressed"></draw_ops>
+<draw_ops name="shade_unfocused_pressed">
+	<include name="shade_focused_pressed" />
+</draw_ops>
 
 <!-- unshade icon -->
-<draw_ops name="unshade_focused"></draw_ops>
+<draw_ops name="unshade_focused">
+	<image filename="unshade_focused_normal.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="unshade_focused_prelight"></draw_ops>
+<draw_ops name="unshade_focused_prelight">
+	<image filename="unshade_focused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="unshade_focused_pressed"></draw_ops>
+<draw_ops name="unshade_focused_pressed">
+	<image filename="unshade_focused_pressed.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="unshade_unfocused"></draw_ops>
+<draw_ops name="unshade_unfocused">
+	<image filename="unshade_unfocused.png" x="0" y="1" width="object_width" height="object_height"/>
+</draw_ops>
 
-<draw_ops name="unshade_unfocused_prelight"></draw_ops>
+<draw_ops name="unshade_unfocused_prelight">
+	<include name="unshade_focused_prelight" />
+</draw_ops>
 
-<draw_ops name="unshade_unfocused_pressed"></draw_ops>
+<draw_ops name="unshade_unfocused_pressed">
+	<include name="unshade_focused_pressed" />
+</draw_ops>
 
 <!-- ::: FRAME STYLES ::: -->
 <frame_style name="normal_focused" geometry="normal">
