@@ -1,4 +1,4 @@
-Evolve is a simple and minimal light theme for Gnome designed to be easy on the eyes. It supports Gnome Shell, Unity, Pantheon and XFCE. The theme is compatible with GTK 3.4. It also includes a GTK 2.0 theme using Murrine engine.
+Evolve is a simple and minimal light theme designed to be easy on the eyes. It supports Gnome Shell, Unity, Pantheon and Xfce. The theme is compatible with GTK 3.6. It also includes a GTK 2.0 theme using Murrine engine.
 
 ---
 
@@ -23,10 +23,14 @@ gsettings set org.gnome.desktop.wm.preferences theme "Evolve"
 
 Note:
 
-If you use Gnome 3.2, download the theme from launchpad https://launchpad.net/~satyajit-happy/+archive/themes/+files/evolve-gtk-theme_2012.01.27-0~satya164~oneiric.tar.gz (Adwaita engine required)
+For older GTK versions, download the theme from launchpad,
+
+GTK3.4: https://launchpad.net/~satyajit-happy/+archive/themes/+files/evolve-gtk-theme_2012.07.05-0~satya164~precise.tar.gz
+
+GTK3.2: https://launchpad.net/~satyajit-happy/+archive/themes/+files/evolve-gtk-theme_2012.01.27-0~satya164~oneiric.tar.gz (Adwaita engine required)
 
 This theme is not compatible with old Gnome 3.0.
 
 ---
 
-License: GPL
+License: GPL-3.0+
