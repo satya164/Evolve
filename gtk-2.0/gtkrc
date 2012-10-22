@@ -1,10 +1,11 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "fg_color:#333\nbg_color:#ccc\nbase_color:#fff\ntext_color:#333\nselected_bg_color:#57c\nselected_fg_color:#eee\ntooltip_bg_color:#ccc\ntooltip_fg_color:#333\nmenu_fg_color:#333\nlink_color:#57c"
+gtk_color_scheme = "fg_color:#333\nbg_color:#ccc\nbase_color:#fff\ntext_color:#333\nselected_bg_color:#57c\nselected_fg_color:#eee\ntooltip_bg_color:#ccc\ntooltip_fg_color:#333\nlink_color:#57c"
 
-gtk-icon-sizes = "gtk-button = 16,16" # Icon size for buttons
-gtk-button-images = 0 # Disables icons for buttons
+gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
+gtk-button-images = 0 # Disables icons in buttons
 gtk-toolbar-style = 1 # Enables text in toolbar
+gtk-auto-mnemonics = 1 # Disables ugly lines under menu items
 
 # Default Style
 
@@ -122,7 +123,7 @@ style "evolve-default" {
 		colorize_scrollbar = FALSE		
 		comboboxstyle = 0 # 0 = normal combobox, 1 = colorized combobox below arrow
 		contrast = 0.75
-		focusstyle = 1 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
+		focusstyle = 2 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
 		gradient_shades = { 1.2, 1.1, 1.1, 1.0 }
 		highlight_shade = 1.0
@@ -179,7 +180,7 @@ style "evolve-notebook" = "evolve-notebook-bg" {
 style "evolve-button" = "evolve-wider" {
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (1.1, @bg_color)
-	bg[ACTIVE] = shade (0.97, @bg_color)
+	bg[ACTIVE] = shade (0.82, @bg_color)
 
   	engine "murrine" {
 		roundness = 2
@@ -305,17 +306,17 @@ style "evolve-menu" {
 	xthickness = 0
 	
 	bg[SELECTED] = @selected_bg_color
-	bg[NORMAL] = @base_color
+	bg[NORMAL] = shade (1.40, @bg_color)
 	bg[PRELIGHT] = @selected_bg_color
-	bg[ACTIVE] = @base_color
-	bg[INSENSITIVE] = @base_color
-	fg[NORMAL] = @menu_fg_color
+	bg[ACTIVE] = shade (1.40, @bg_color)
+	bg[INSENSITIVE] = shade (1.40, @bg_color)
+	fg[NORMAL] = @fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
 	fg[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
 	text[NORMAL] = @text_color
-	base[NORMAL] = @menu_fg_color
+	base[NORMAL] = @fg_color
 	text[PRELIGHT] = @selected_fg_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
@@ -352,14 +353,14 @@ style "evolve-menubar" {
 	bg[SELECTED] = @selected_bg_color
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = @selected_bg_color
-	bg[ACTIVE] = @base_color
-	bg[INSENSITIVE] = @base_color
-	fg[NORMAL] = @menu_fg_color
+	bg[ACTIVE] = shade (1.40, @bg_color)
+	bg[INSENSITIVE] = shade (1.40, @bg_color)
+	fg[NORMAL] = @fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
 	fg[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
-	text[NORMAL] = @menu_fg_color
+	text[NORMAL] = @text_color
 	text[PRELIGHT] = @selected_fg_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
