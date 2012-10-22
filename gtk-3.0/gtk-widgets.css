@@ -204,6 +204,8 @@ GtkSwitch.slider,
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 1.06), 0.97)),
                                      to (shade(shade(@theme_bg_color, 1.06), 0.82)));
+
+    border-color: shade(@theme_bg_color, 0.7);
 }
 
 .button:hover,
@@ -1667,6 +1669,8 @@ GtkTextView {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 1.06), 0.97)),
                                      to (shade(shade(@theme_bg_color, 1.06), 0.82)));
+
+    border-color: shade(@theme_bg_color, 0.7);
 }
 
 .primary-toolbar .button:active:hover {
