@@ -12,8 +12,8 @@
     -GtkButton-child-displacement-y: 0;
     -GtkButton-default-border: 0;
     -GtkButton-image-spacing: 0;
-    -GtkButton-interior-focus: true;
     -GtkButton-inner-border: 1;
+    -GtkButton-interior-focus: true;
     -GtkCheckButton-indicator-size: 16;
     -GtkCheckMenuItem-indicator-size: 12;
     -GtkEntry-inner-border: 1;
@@ -21,10 +21,10 @@
     -GtkExpander-expander-size: 11;
     -GtkHTML-link-color: @link_color;
     -GtkIMHtml-hyperlink-color: @link_color;
-    -GtkMenu-horizontal-padding: 0;
-    -GtkMenu-vertical-padding: 0;  
     -GtkMenuBar-internal-padding: 0;
+    -GtkMenu-horizontal-padding: 0;
     -GtkMenuItem-arrow-scaling: 0.5;
+    -GtkMenu-vertical-padding: 0;  
     -GtkNotebook-initial-gap: 0;
     -GtkPaned-handle-size: 3;
     -GtkProgressBar-min-horizontal-bar-height: 21;
@@ -35,28 +35,28 @@
     -GtkRange-trough-under-steppers: 1;
     -GtkScale-trough-border: 1;
     -GtkScrollbar-activate-slider: 1;
-    -GtkScrollbar-trough-border: 0;
-    -GtkScrollbar-slider-width: 15;
     -GtkScrollbar-min-slider-length: 30;
+    -GtkScrollbar-slider-width: 15;
+    -GtkScrollbar-trough-border: 0;
     -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkScrolledWindow-scrollbars-within-bevel: 1;
     -GtkSeparatorMenuItem-horizontal-padding: 0;
     -GtkStatusbar-shadow-type: none;
     -GtkTextView-error-underline-color: @error_color;
+    -GtkToolbar-internal-padding: 0;
     -GtkToolButton-icon-spacing: 6;
     -GtkToolItemGroup-expander-size: 11;
-    -GtkToolbar-internal-padding: 0;
     -GtkTreeView-expander-size: 11;
     -GtkTreeView-vertical-separator: 0;
-    -GtkWidget-wide-separators: true;
-    -GtkWidget-separator-width: 1;
-    -GtkWidget-separator-height: 1;
-    -GtkWidget-focus-padding: 0;
     -GtkWidget-focus-line-width: 1;
+    -GtkWidget-focus-padding: 0;
     -GtkWidget-link-color: @link_color;
+    -GtkWidget-separator-height: 1;
+    -GtkWidget-separator-width: 1;
     -GtkWidget-visited-link-color: @link_color;
-    -GtkWindow-resize-grip-width: 0;
+    -GtkWidget-wide-separators: true;
     -GtkWindow-resize-grip-height: 0;
+    -GtkWindow-resize-grip-width: 0;
     -WnckTasklist-fade-overlay-rect: 0;
 }
 
@@ -226,7 +226,7 @@ GtkSwitch.slider,
                                      from (shade(mix(@button_bg_color, @theme_bg_color, 0.6), 1.04)),
                                      to (shade(mix(@button_bg_color, @theme_bg_color, 0.6), 0.96)));
 
-    border-color: shade(@theme_bg_color, 0.9);
+    border-color: shade(@theme_bg_color, 0.8);
 }
 
 .button:insensitive:active {
@@ -234,7 +234,7 @@ GtkSwitch.slider,
                                      from (shade(mix(@button_bg_color, @theme_bg_color, 0.6), 0.97)),
                                      to (shade(mix(@button_bg_color, @theme_bg_color, 0.6), 1.0)));
 
-    border-color: shade(@theme_bg_color, 0.8);
+    border-color: shade(@theme_bg_color, 0.7);
 }
 
 /* default button */
@@ -242,6 +242,7 @@ GtkSwitch.slider,
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (mix(shade(@theme_selected_bg_color, 1.16), @theme_bg_color, 0.3)),
                                      to (mix(shade(@theme_selected_bg_color, 0.84), @theme_bg_color, 0.3)));
+
     border-color: mix(shade(@theme_selected_bg_color, 0.8), @theme_bg_color, 0.3);
 }
 
@@ -410,7 +411,7 @@ GtkDrawingArea {
 
 /************
 * gucharmap *
-*************
+*************/
 GucharmapChartable {
     background-color: @theme_base_color;
 }
@@ -421,7 +422,6 @@ GucharmapChartable:selected {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
 }
-*/
 
 /***********
  * gtkhtml *
@@ -947,15 +947,15 @@ GtkTreeMenu .menuitem * {
 }
 
 .notebook tab.right {
-    background-image: none;
     background-color: @theme_bg_color;
+    background-image: none;
     padding: 3px;
     border-radius: 0 2px 2px 0;
 }
 
 .notebook tab.right:active {
-    background-image: none;
     background-color: shade(@theme_bg_color, 1.12);
+    background-image: none;
     padding: 3px 4px;
     border-width: 1px 1px 1px 0;
 }
@@ -971,15 +971,15 @@ GtkTreeMenu .menuitem * {
 }
 
 .notebook tab.left {
-    background-image: none;
     background-color: @theme_bg_color;
+    background-image: none;
     padding: 3px;
     border-radius: 2px 0 0 2px;
 }
 
 .notebook tab.left:active {
-    background-image: none;
     background-color: shade(@theme_bg_color, 1.12);
+    background-image: none;
     padding: 3px 4px;
     border-width: 1px 0 1px 1px;
 }
@@ -1146,12 +1146,12 @@ GtkScale.vertical {
 }
 
 GtkScale.slider {
-    color: transparent;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 1.06), 1.2)),
                                      to (shade(shade(@theme_bg_color, 1.06), 0.97)));
 
     border-radius: 7px;
+    color: transparent;
 }
 
 GtkScale.slider:hover {
@@ -1433,11 +1433,11 @@ GtkComboBox .separator {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 1.02)),
                                      to (shade(@theme_bg_color, 0.98)));
+
     border-top-color: shade(@theme_bg_color, 0.64);
     border-right-color: shade(@theme_bg_color, 0.76);
     border-bottom-color: shade(@theme_bg_color, 0.82);
     border-left-color: shade(@theme_bg_color, 0.76);
-
     color: shade(@theme_bg_color, 0.6);
 }
 
@@ -1537,8 +1537,9 @@ GtkComboBox .separator {
                       -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)),
                       -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)),
                       -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent));
+
     background-position: 14% 14%, 0% 50%, 14% 86%, 50% 100%, 86% 86%, 100% 50%, 86% 14%, 50% 0%;
-    background-size: 20% 20%;
+    background-size: 15% 15%;
     background-repeat: no-repeat;
 }
 
@@ -1656,8 +1657,7 @@ GtkTextView {
 
 .primary-toolbar .raised .button,
 .primary-toolbar .raised.button,
-.primary-toolbar .button:hover,
-.primary-toolbar .button:insensitive {
+.primary-toolbar .button:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 1.4)),
                                      to (shade(@theme_bg_color, 1.1)));
@@ -1681,7 +1681,7 @@ GtkTextView {
 
 .primary-toolbar .button:active:insensitive,
 .primary-toolbar .button:insensitive {
-    border-color: shade(@theme_bg_color, 0.9);
+    border-color: shade(@theme_bg_color, 0.8);
 }
 
 .primary-toolbar .button:insensitive {

@@ -119,7 +119,7 @@ style "evolve-default" {
 
 	engine "murrine" {
 		animation = FALSE
-		arrowstyle = 0 # 0 = normal arrows, 1 = filled arrows
+		arrowstyle = 1 # 0 = normal arrows, 1 = filled arrows
 		colorize_scrollbar = FALSE		
 		comboboxstyle = 0 # 0 = normal combobox, 1 = colorized combobox below arrow
 		contrast = 0.75
@@ -501,7 +501,7 @@ widget_class "*XfdesktopIconView*"		style "xfdesktop-icon-view"
 widget "xfwm4-tabwin*"				style "xfwm-tabwin"
 widget_class "*XfsmLogoutDialog*"		style "xfsm-logout"
 
-# Chromium Styles
+# Google Chrome/Chromium Styles (requires 9.0.597 or newer)
 
 style "chromium-toolbar-button" {
 	engine "murrine" {
@@ -512,21 +512,21 @@ style "chromium-toolbar-button" {
 
 style "chrome-gtk-frame"
 {
-ChromeGtkFrame::frame-color = @bg_color
-ChromeGtkFrame::inactive-frame-color = @bg_color
+	ChromeGtkFrame::frame-color = @bg_color
+	ChromeGtkFrame::inactive-frame-color = @bg_color
 
-ChromeGtkFrame::frame-gradient-size = 16
-ChromeGtkFrame::frame-gradient-color = @bg_color
+	ChromeGtkFrame::frame-gradient-size = 16
+	ChromeGtkFrame::frame-gradient-color = @bg_color
 
-ChromeGtkFrame::incognito-frame-color = shade (0.97, @bg_color)
-ChromeGtkFrame::incognito-inactive-frame-color = shade (0.97, @bg_color)
+	ChromeGtkFrame::incognito-frame-color = shade (0.97, @bg_color)
+	ChromeGtkFrame::incognito-inactive-frame-color = shade (0.97, @bg_color)
 
-ChromeGtkFrame::incognito-frame-gradient-size = 16
-ChromeGtkFrame::incognito-frame-gradient-color = shade (0.97, @bg_color)
+	ChromeGtkFrame::incognito-frame-gradient-size = 16
+	ChromeGtkFrame::incognito-frame-gradient-color = shade (0.97, @bg_color)
 
-ChromeGtkFrame::scrollbar-trough-color = shade (1.1, @bg_color)
-ChromeGtkFrame::scrollbar-slider-prelight-color = shade (0.97, @bg_color)
-ChromeGtkFrame::scrollbar-slider-normal-color = @bg_color
+	ChromeGtkFrame::scrollbar-trough-color = shade (0.97, @bg_color)
+	ChromeGtkFrame::scrollbar-slider-prelight-color = shade (1.02, @bg_color)
+	ChromeGtkFrame::scrollbar-slider-normal-color = shade (1.12, @bg_color)
 }
 
 class "ChromeGtkFrame" style "chrome-gtk-frame"
