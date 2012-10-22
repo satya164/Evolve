@@ -104,47 +104,47 @@
 <draw_ops name="titlebar_gradient">
 	<!-- horizontal gradient -->
 	<gradient type="horizontal" x="0" y="0" width="width" height="title_height + 5">
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.1"/>
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.2"/>
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.2"/>
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.1"/>
+	<color value="shade/gtk:bg[NORMAL]/1.1"/>
+	<color value="shade/gtk:bg[NORMAL]/1.2"/>
+	<color value="shade/gtk:bg[NORMAL]/1.2"/>
+	<color value="shade/gtk:bg[NORMAL]/1.1"/>
 	</gradient>
 
 	<!-- shade to menubar -->
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".0" width="width - 2" height="2" x="1" y="title_height - 15" /> 
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".1" width="width - 2" height="2" x="1" y="title_height - 13" /> 
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".2" width="width - 2" height="2" x="1" y="title_height - 11" /> 
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".3" width="width - 2" height="2" x="1" y="title_height - 9" />  
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".4" width="width - 2" height="2" x="1" y="title_height - 7" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".5" width="width - 2" height="2" x="1" y="title_height - 5" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".6" width="width - 2" height="2" x="1" y="title_height - 3" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".7" width="width - 2" height="2" x="1" y="title_height - 1" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".8" width="width - 2" height="2" x="1" y="title_height + 1" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".9" width="width - 2" height="2" x="1" y="title_height + 3" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha="1" width="width - 2" height="2" x="1" y="title_height + 5" />
+	<tint color="gtk:bg[NORMAL]" alpha=".0" width="width - 2" height="2" x="1" y="title_height - 15" /> 
+	<tint color="gtk:bg[NORMAL]" alpha=".1" width="width - 2" height="2" x="1" y="title_height - 13" /> 
+	<tint color="gtk:bg[NORMAL]" alpha=".2" width="width - 2" height="2" x="1" y="title_height - 11" /> 
+	<tint color="gtk:bg[NORMAL]" alpha=".3" width="width - 2" height="2" x="1" y="title_height - 9" />  
+	<tint color="gtk:bg[NORMAL]" alpha=".4" width="width - 2" height="2" x="1" y="title_height - 7" />
+	<tint color="gtk:bg[NORMAL]" alpha=".5" width="width - 2" height="2" x="1" y="title_height - 5" />
+	<tint color="gtk:bg[NORMAL]" alpha=".6" width="width - 2" height="2" x="1" y="title_height - 3" />
+	<tint color="gtk:bg[NORMAL]" alpha=".7" width="width - 2" height="2" x="1" y="title_height - 1" />
+	<tint color="gtk:bg[NORMAL]" alpha=".8" width="width - 2" height="2" x="1" y="title_height + 1" />
+	<tint color="gtk:bg[NORMAL]" alpha=".9" width="width - 2" height="2" x="1" y="title_height + 3" />
+	<tint color="gtk:bg[NORMAL]" alpha="1" width="width - 2" height="2" x="1" y="title_height + 5" />
 </draw_ops>
 
 <draw_ops name="titlebar_gradient_unfocused">
 	<!-- horizontal gradient -->
 	<gradient type="horizontal" x="0" y="0" width="width" height="title_height + 5">
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.0"/>
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.1"/>
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.1"/>
-	<color value="shade/gtk:custom(wm_bg,gtk:bg[NORMAL])/1.0"/>
+	<color value="shade/gtk:bg[NORMAL]/1.0"/>
+	<color value="shade/gtk:bg[NORMAL]/1.1"/>
+	<color value="shade/gtk:bg[NORMAL]/1.1"/>
+	<color value="shade/gtk:bg[NORMAL]/1.0"/>
 	</gradient>
 
 	<!-- shade to menubar -->
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".0" width="width - 2" height="2" x="1" y="title_height - 15" /> 
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".1" width="width - 2" height="2" x="1" y="title_height - 13" /> 
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".2" width="width - 2" height="2" x="1" y="title_height - 11" /> 
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".3" width="width - 2" height="2" x="1" y="title_height - 9" />  
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".4" width="width - 2" height="2" x="1" y="title_height - 7" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".5" width="width - 2" height="2" x="1" y="title_height - 5" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".6" width="width - 2" height="2" x="1" y="title_height - 3" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".7" width="width - 2" height="2" x="1" y="title_height - 1" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".8" width="width - 2" height="2" x="1" y="title_height + 1" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha=".9" width="width - 2" height="2" x="1" y="title_height + 3" />
-	<tint color="gtk:custom(wm_bg,gtk:bg[NORMAL])" alpha="1" width="width - 2" height="2" x="1" y="title_height + 5" />
+	<tint color="gtk:bg[NORMAL]" alpha=".0" width="width - 2" height="2" x="1" y="title_height - 15" /> 
+	<tint color="gtk:bg[NORMAL]" alpha=".1" width="width - 2" height="2" x="1" y="title_height - 13" /> 
+	<tint color="gtk:bg[NORMAL]" alpha=".2" width="width - 2" height="2" x="1" y="title_height - 11" /> 
+	<tint color="gtk:bg[NORMAL]" alpha=".3" width="width - 2" height="2" x="1" y="title_height - 9" />  
+	<tint color="gtk:bg[NORMAL]" alpha=".4" width="width - 2" height="2" x="1" y="title_height - 7" />
+	<tint color="gtk:bg[NORMAL]" alpha=".5" width="width - 2" height="2" x="1" y="title_height - 5" />
+	<tint color="gtk:bg[NORMAL]" alpha=".6" width="width - 2" height="2" x="1" y="title_height - 3" />
+	<tint color="gtk:bg[NORMAL]" alpha=".7" width="width - 2" height="2" x="1" y="title_height - 1" />
+	<tint color="gtk:bg[NORMAL]" alpha=".8" width="width - 2" height="2" x="1" y="title_height + 1" />
+	<tint color="gtk:bg[NORMAL]" alpha=".9" width="width - 2" height="2" x="1" y="title_height + 3" />
+	<tint color="gtk:bg[NORMAL]" alpha="1" width="width - 2" height="2" x="1" y="title_height + 5" />
 </draw_ops>
 
 <draw_ops name="titlebar_maximized">
