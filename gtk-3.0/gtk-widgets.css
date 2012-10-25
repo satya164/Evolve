@@ -472,7 +472,7 @@ GtkComboBox.combobox-entry .button:insensitive {
  * entry *
  *********/
 .entry {
-    padding: 3px 5px;
+    padding: 3px;
     border-style: solid;
     border-top-color: shade(@theme_bg_color, 0.7);
     border-right-color: shade(@theme_bg_color, 0.76);
@@ -817,7 +817,7 @@ GtkTreeMenu .menuitem * {
 
 .menuitem,
 .menu .menuitem {
-    padding: 5px 3px;
+    padding: 3px;
     border-width: 1px;
     border-style: solid;
     border-radius: 0;
@@ -928,7 +928,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .notebook tab.top:active {
-    padding: 5px 3px;
+    padding: 4px 3px;
 }
 
 .notebook tab.right {
@@ -938,7 +938,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .notebook tab.right:active {
-    padding: 3px 5px;
+    padding: 3px 4px;
 }
 
 .notebook tab.bottom {
@@ -948,7 +948,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .notebook tab.bottom:active {
-    padding: 5px 3px;
+    padding: 4px 3px;
 }
 
 .notebook tab.left {
@@ -958,7 +958,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .notebook tab.left:active {
-    padding: 3px 5px;
+    padding: 3px 4px;
 }
 
 /******************
