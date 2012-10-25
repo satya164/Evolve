@@ -10,7 +10,7 @@
     background-clip: padding-box;
     background-origin: border-box;
 
-    -GtkArrow-arrow-scaling: 0.6;
+    -GtkArrow-arrow-scaling: 0.5;
     -GtkButton-child-displacement-x: 0;
     -GtkButton-child-displacement-y: 0;
     -GtkButton-default-border: 0;
@@ -39,8 +39,6 @@
     -GtkScale-trough-border: 1;
     -GtkScrollbar-activate-slider: 1;
     -GtkScrollbar-min-slider-length: 30;
-    -GtkScrollbar-slider-width: 15;
-    -GtkScrollbar-trough-border: 0;
     -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkScrolledWindow-scrollbars-within-bevel: 1;
     -GtkSeparatorMenuItem-horizontal-padding: 0;
@@ -358,7 +356,7 @@ GtkCheckButton:hover,
 GtkCheckButton:active:hover,
 GtkCheckButton:selected,
 GtkCheckButton:selected:focus {
-    background-color: @theme_bg_color;
+    background-color: transparent;
 }
 
 /*****************
