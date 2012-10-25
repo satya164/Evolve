@@ -99,3 +99,54 @@
 .menuitem.radio:active:insensitive {
     background-image: url("assets/menuitem-radio-checked-insensitive.png");
 }
+
+/*******************
+ * backdrop states *
+ *******************/
+.check:active:backdrop,
+.check row:selected:active:backdrop,
+.check row:selected:focus:active:backdrop {
+    background-image: url("assets/checkbox-checked-backdrop.png");
+}
+
+.check:active:insensitive:backdrop,
+.check row:selected:active:insensitive:backdrop,
+.check row:selected:focus:active:insensitive:backdrop {
+    background-image: url("assets/checkbox-checked-insensitive.png");
+}
+
+.check:inconsistent:backdrop,
+.check row:selected:inconsistent:backdrop,
+.check row:selected:focus:inconsistent:backdrop {
+    background-image: url("assets/checkbox-mixed-backdrop.png");
+}
+
+.check:inconsistent:insensitive:backdrop,
+.check row:selected:inconsistent:insensitive:backdrop,
+.check row:selected:focus:inconsistent:insensitive:backdrop {
+    background-image: url("assets/checkbox-mixed-insensitive.png");
+}
+
+.radio:active:backdrop,
+.radio row:selected:active:backdrop,
+.radio row:selected:focus:active:backdrop {
+    background-image: url("assets/radio-selected-backdrop.png");
+}
+
+.radio:active:insensitive:backdrop,
+.radio row:selected:active:insensitive:backdrop,
+.radio row:selected:focus:active:insensitive:backdrop {
+    background-image: url("assets/radio-selected-insensitive.png");
+}
+
+.radio:inconsistent:backdrop,
+.radio row:selected:inconsistent:backdrop,
+.radio row:selected:focus:inconsistent:backdrop {
+    background-image: url("assets/radio-mixed-backdrop.png");
+}
+
+.radio:inconsistent:insensitive:backdrop,
+.radio row:selected:inconsistent:insensitive:backdrop,
+.radio row:selected:focus:inconsistent:insensitive:backdrop {
+    background-image: url("assets/radio-mixed-insensitive.png");
+}
