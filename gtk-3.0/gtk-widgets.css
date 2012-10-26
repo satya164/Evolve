@@ -263,12 +263,9 @@ GtkAssistant .sidebar {
 .linked .button,
 .linked .button:active,
 .linked .button:active:hover,
-.linked .button:insensitive,
-.primary-toolbar .linked .entry,
-.primary-toolbar .linked .button,
-.primary-toolbar .linked .button:active,
-.primary-toolbar .linked .button:active:hover,
-.primary-toolbar .linked .button:insensitive {
+.linked .button:focus,
+.linked .button:focus:active,
+.linked .button:insensitive {
     border-width: 1px;
     border-right-width: 0;
     border-radius: 0;
@@ -279,12 +276,9 @@ GtkAssistant .sidebar {
 .linked .button:first-child,
 .linked .button:active:first-child,
 .linked .button:active:hover:first-child,
-.linked .button:insensitive:first-child,
-.primary-toolbar .linked .entry:first-child,
-.primary-toolbar .linked .button:first-child,
-.primary-toolbar .linked .button:active:first-child,
-.primary-toolbar .linked .button:active:hover:first-child,
-.primary-toolbar .linked .button:insensitive:first-child {
+.linked .button:focus:first-child,
+.linked .button:focus:active:first-child,
+.linked .button:insensitive:first-child {
     border-width: 1px;
     border-right-width: 0;
     border-radius: 2px;
@@ -297,12 +291,9 @@ GtkAssistant .sidebar {
 .linked .button:last-child,
 .linked .button:active:last-child,
 .linked .button:active:hover:last-child,
-.linked .button:insensitive:last-child,
-.primary-toolbar .linked .entry:last-child,
-.primary-toolbar .linked .button:last-child,
-.primary-toolbar .linked .button:active:last-child,
-.primary-toolbar .linked .button:active:hover:last-child,
-.primary-toolbar .linked .button:insensitive:last-child {
+.linked .button:focus:last-child,
+.linked .button:focus:active:last-child,
+.linked .button:insensitive:last-child {
     border-width: 1px;
     border-radius: 2px;
     border-bottom-left-radius: 0;
@@ -314,12 +305,9 @@ GtkAssistant .sidebar {
 .linked .button:only-child,
 .linked .button:active:only-child,
 .linked .button:active:hover:only-child,
-.linked .button:insensitive:only-child,
-.primary-toolbar .linked .entry:only-child,
-.primary-toolbar .linked .button:only-child,
-.primary-toolbar .linked .button:active:only-child,
-.primary-toolbar .linked .button:active:hover:only-child,
-.primary-toolbar .linked .button:insensitive:only-child {
+.linked .button:focus:only-child,
+.linked .button:focus:active:only-child,
+.linked .button:insensitive:only-child {
     border-width: 1px;
     border-radius: 2px;
 }
