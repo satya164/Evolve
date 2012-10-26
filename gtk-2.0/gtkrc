@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "fg_color:#333\nbg_color:#ccc\nbase_color:#fff\ntext_color:#333\nselected_bg_color:#57c\nselected_fg_color:#eee\ntooltip_bg_color:#ccc\ntooltip_fg_color:#333\nlink_color:#57c"
+gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5577cc\ntext_color:#000000\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5577cc"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
@@ -75,7 +75,6 @@ style "evolve-default" {
 	GtkTreeView::odd_row_color = shade (0.95, @base_color)
 
 	GtkWidget::focus-padding = 0
-	GtkWidget::new-tooltip-style = 0
 
 	GtkWidget::wide-separators = 1
 	GtkWidget::separator-width = 1
@@ -125,7 +124,7 @@ style "evolve-default" {
 		contrast = 0.75
 		focusstyle = 2 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
-		gradient_shades = { 1.2, 1.1, 1.1, 1.0 }
+		gradient_shades = { 1.2, 1.1, 1.1, 0.97 }
 		highlight_shade = 1.0
 		lightborder_shade = 1.0
 		lightborderstyle = 0 # 0 = lightborder on top side, 1 = lightborder on all sides
@@ -251,12 +250,14 @@ style "evolve-tooltips" = "evolve-wider" {
 	xthickness = 5
 	ythickness = 5
 
-	bg[NORMAL] = @tooltip_bg_color
-	fg[NORMAL] = @tooltip_fg_color
-	bg[SELECTED] = @tooltip_bg_color
+	bg[NORMAL] = @bg_color
+	fg[NORMAL] = @fg_color
+	bg[SELECTED] = @bg_color
 
 	engine "murrine" {
 		textstyle = 0
+		roundness = 2
+		rgba = FALSE
 	}
 }
 
