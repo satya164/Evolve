@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5577cc\ntext_color:#000000\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5577cc"
+gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5588ee\ntext_color:#000000\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5588ee"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
@@ -43,8 +43,8 @@ style "evolve-default" {
 
 	GtkPaned::handle-size = 1
 
-	GtkProgressBar::min-horizontal-bar-height = 21
-	GtkProgressBar::min-vertical-bar-width = 21
+	GtkProgressBar::min-horizontal-bar-height = 10
+	GtkProgressBar::min-vertical-bar-width = 10
 
 	GtkRange::trough-border = 0
 	GtkRange::slider-width = 15
@@ -57,12 +57,12 @@ style "evolve-default" {
 	GtkScale::trough-side-details = 1
 
 	GtkScrollbar::activate-slider = 1
-	GtkScrollbar::has-backward-stepper = 1
-	GtkScrollbar::has-forward-stepper = 1
+	GtkScrollbar::has-backward-stepper = 0
+	GtkScrollbar::has-forward-stepper = 0
 	GtkScrollbar::has-secondary-backward-stepper = 0
 	GtkScrollbar::has-secondary-forward-stepper = 0
-	GtkScrollbar::min-slider-length = 30
-	GtkScrollbar::slider-width = 15
+	GtkScrollbar::min-slider-length = 100
+	GtkScrollbar::slider-width = 10
 	GtkScrollbar::trough-border = 1
 
 	GtkScrolledWindow::scrollbar-spacing = 0
@@ -121,9 +121,10 @@ style "evolve-default" {
 		arrowstyle = 1 # 0 = normal arrows, 1 = filled arrows
 		colorize_scrollbar = FALSE		
 		comboboxstyle = 0 # 0 = normal combobox, 1 = colorized combobox below arrow
-		contrast = 0.75
-		focusstyle = 2 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
+		contrast = 1.0
+		focusstyle = 3 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
+		glowstyle = 1
 		gradient_shades = { 1.2, 1.1, 1.1, 0.97 }
 		highlight_shade = 1.0
 		lightborder_shade = 1.0
@@ -189,11 +190,17 @@ style "evolve-button" = "evolve-wider" {
 }
 
 style "evolve-scrollbar" = "evolve-button" {
-	bg[PRELIGHT] = shade (0.97, @bg_color)
+	bg[NORMAL] = @bg_color
+	bg[PRELIGHT] = shade (1.4, @selected_bg_color)
 	
 	engine "murrine" {
-		trough_shades = { 0.97, 1.05 }
-		trough_border_shades = { 0.9, 0.9 }
+		roundness = 4
+		border_shades = { 1.4, 1.4  }
+		gradient_shades = { 0.7, 0.7, 0.7, 0.7 }
+		trough_shades = { 1.0, 1.0 }
+		trough_border_shades = { 1.2, 1.2 }
+    		lightborder_shade = 1.0
+		lightborderstyle = 0
 	}
 }
 
@@ -223,6 +230,7 @@ style "evolve-progressbar" = "evolve-default" {
 	engine "murrine" {
 		roundness = 2
 		border_shades = { 1.2, 1.2 }
+		gradient_shades = { 1.1, 1.0, 1.0, 0.9 }
 		trough_border_shades = { 0.9, 0.9 }
 	}
 }
@@ -269,8 +277,8 @@ style "evolve-spinbutton" = "evolve-button" {
 }
 
 style "evolve-radiocheck" = "evolve-default" {
-	text[NORMAL] = @selected_bg_color
-	text[PRELIGHT] = @selected_bg_color
+	text[NORMAL] = shade (0.8, @selected_bg_color)
+	text[PRELIGHT] = shade (0.8, @selected_bg_color)
 	bg[SELECTED] = @base_color
 }
 
@@ -278,7 +286,7 @@ style "evolve-entry" = "evolve-wider" {
 	bg[SELECTED] = mix (0.5, @selected_bg_color, @base_color)
 
 	engine "murrine" {
-		focusstyle = 3
+		border_shades = { 1.2, 1.2 }
 	}
 }
 
@@ -366,6 +374,10 @@ style "evolve-menubar" {
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
 	text[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
+
+	engine "murrine" {
+		roundness = 0
+	}
 }
 
 # Toolbars
@@ -374,7 +386,7 @@ style "evolve-toolbar" = "evolve-default" {
 	bg[NORMAL] = @bg_color
 
 	engine "murrine" {
-		gradient_shades = { 1.0, 1.1, 1.1, 1.2 }
+		gradient_shades = { 1.00, 0.95, 0.94, 0.90 }
 	}
 }
 

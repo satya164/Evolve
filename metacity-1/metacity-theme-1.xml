@@ -104,10 +104,9 @@
 <draw_ops name="titlebar_gradient">
 	<!-- horizontal gradient -->
 	<gradient type="horizontal" x="0" y="0" width="width" height="title_height + 5">
-	<color value="shade/gtk:bg[NORMAL]/1.1"/>
-	<color value="shade/gtk:bg[NORMAL]/1.2"/>
-	<color value="shade/gtk:bg[NORMAL]/1.2"/>
-	<color value="shade/gtk:bg[NORMAL]/1.1"/>
+	<color value="shade/gtk:bg[NORMAL]/1.00"/>
+	<color value="shade/gtk:bg[NORMAL]/1.10"/>
+	<color value="shade/gtk:bg[NORMAL]/1.00"/>
 	</gradient>
 
 	<!-- shade to menubar -->
@@ -127,10 +126,9 @@
 <draw_ops name="titlebar_gradient_unfocused">
 	<!-- horizontal gradient -->
 	<gradient type="horizontal" x="0" y="0" width="width" height="title_height + 5">
-	<color value="shade/gtk:bg[NORMAL]/1.0"/>
-	<color value="shade/gtk:bg[NORMAL]/1.1"/>
-	<color value="shade/gtk:bg[NORMAL]/1.1"/>
-	<color value="shade/gtk:bg[NORMAL]/1.0"/>
+	<color value="shade/gtk:bg[NORMAL]/1.00"/>
+	<color value="shade/gtk:bg[NORMAL]/1.05"/>
+	<color value="shade/gtk:bg[NORMAL]/1.00"/>
 	</gradient>
 
 	<!-- shade to menubar -->

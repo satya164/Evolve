@@ -17,7 +17,6 @@ PanelApplet {
 }
 
 PanelSeparator {
-
     border-width: 0;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 1.2)),
@@ -34,7 +33,6 @@ PanelMenuBar.menubar.menuitem {
     -PanelMenuBar-icon-visible: true;
 
     border-width: 0;
-
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 1.2)),
                                      to (shade(@theme_bg_color, 0.85)));
@@ -178,8 +176,8 @@ NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar:only-chil
 TerminalScreen {
     -TerminalScreen-background-darkness: 0.9;
 
-    background-color: #000;
-    color: #fff;
+    background-color: #333;
+    color: #eee;
 }
 
 TerminalWindow GtkNotebook.notebook {
