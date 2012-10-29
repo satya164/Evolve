@@ -6,8 +6,8 @@ PanelApplet,
 PanelToplevel {
     padding: 0;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.2)),
-                                     to (shade(@theme_bg_color, 0.85)));
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 0.9)));
 
     color: @theme_fg_color;
 }
@@ -19,8 +19,8 @@ PanelApplet {
 PanelSeparator {
     border-width: 0;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.2)),
-                                     to (shade(@theme_bg_color, 0.85)));
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 0.9)));
 
     color: @theme_fg_color;
 }
@@ -34,42 +34,40 @@ PanelMenuBar.menubar.menuitem {
 
     border-width: 0;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.2)),
-                                     to (shade(@theme_bg_color, 0.85)));
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 0.9)));
 }
 
 PanelAppletFrame {
     border-width: 0;
     background-color: @theme_bg_color; 
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.2)),
-                                     to (shade(@theme_bg_color, 0.85)));
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 0.9)));
 }
 
 PanelApplet .button {
     -GtkButton-inner-border: 2;
 
-    border-width: 0 1px 0 1px;
-    border-color: shade(@theme_bg_color, 0.8);
+    border-width: 0;
     border-radius: 0;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.2)),
-                                     to (shade(@theme_bg_color, 0.85)));
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 0.9)));
 
     color: @theme_fg_color;
 }
 
-PanelApplet .button:prelight:active,
 PanelApplet .button:active {
-    border-width: 0 1px 0 1px;
-    border-color: shade(@theme_bg_color, 0.7);
+    border-width: 0;
     border-radius: 0;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 1.06), 0.97)),
                                      to (shade(shade(@theme_bg_color, 1.06), 0.82)));
 }
 
-PanelApplet .button:prelight {
+PanelApplet .button:prelight,
+PanelApplet .button:active:prelight {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 1.06), 1.40)),
                                      to (shade(shade(@theme_bg_color, 1.06), 1.05)));
