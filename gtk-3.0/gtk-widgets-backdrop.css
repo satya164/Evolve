@@ -24,6 +24,7 @@
  * button *
  **********/
 /* default button */
+/* let's forget the default button for now
 .button.default:backdrop {
     border-color: shade(@backdrop_selected_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
@@ -45,13 +46,14 @@
                                      from (shade(@backdrop_selected_bg_color, 0.95)),
                                      to (shade(@backdrop_selected_bg_color, 1.05)));
 }
+*/
 
 /****************
  * cell and row *
  ****************/
 row:selected:backdrop,
 row:selected:focus:backdrop {
-    border-color: @backdrop_selected_bg_color;
+    border-color: shade(@backdrop_selected_bg_color, 0.9);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@backdrop_selected_bg_color, 1.1)),
                                      to (shade(@backdrop_selected_bg_color, 0.9)));
@@ -64,9 +66,9 @@ row:selected:focus:backdrop {
  ************/
 GtkIconView.view.cell:selected:backdrop,
 GtkIconView.view.cell:selected:focus:backdrop {
-    border-color: shade(@backdrop_selected_bg_color, 0.8);
+    border-color: shade(@backdrop_selected_bg_color, 0.9);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@backdrop_selected_bg_color, 1.0)),
+                                     from (shade(@backdrop_selected_bg_color, 1.1)),
                                      to (shade(@backdrop_selected_bg_color, 0.9)));
 
     color: @backdrop_selected_fg_color;
@@ -140,11 +142,15 @@ GtkIconView.view.cell:selected:focus:backdrop {
 /**********
  * switch *
  **********/
+GtkSwitch.slider:active:backdrop {
+    border-color: shade(@backdrop_selected_bg_color, 0.8);
+}
+
 GtkSwitch.trough:active:backdrop {
     border-color: shade(@backdrop_selected_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@backdrop_selected_bg_color, 0.85)),
-                                     to (shade(@backdrop_selected_bg_color, 0.97)));
+                                     from (shade(@backdrop_selected_bg_color, 0.97)),
+                                     to (shade(@backdrop_selected_bg_color, 1.0)));
 
     color: @backdrop_selected_fg_color;
 }
