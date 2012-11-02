@@ -142,10 +142,6 @@ GtkIconView.view.cell:selected:focus:backdrop {
 /**********
  * switch *
  **********/
-GtkSwitch.slider:active:backdrop {
-    border-color: shade(@backdrop_selected_bg_color, 0.8);
-}
-
 GtkSwitch.trough:active:backdrop {
     border-color: shade(@backdrop_selected_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
