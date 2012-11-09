@@ -61,6 +61,10 @@
     -GtkWindow-resize-grip-height: 0;
     -GtkWindow-resize-grip-width: 0;
     -WnckTasklist-fade-overlay-rect: 0;
+
+    outline-color: alpha(@theme_fg_color, 0.3);
+    outline-style: dashed;
+    outline-offset: 2px;
 }
 
 /***************
@@ -204,6 +208,12 @@ GtkAssistant .sidebar {
     color: @theme_fg_color;
 }
 
+.button:hover {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(shade(@theme_bg_color, 1.06), 1.40)),
+                                     to (shade(shade(@theme_bg_color, 1.06), 1.05)));
+}
+
 .button:active {
     border-color: shade(@theme_bg_color, 0.7);
     background-image: -gtk-gradient(linear, left top, left bottom,
@@ -211,17 +221,13 @@ GtkAssistant .sidebar {
                                      to (shade(shade(@theme_bg_color, 1.06), 0.82)));
 }
 
-.button:hover,
 .button:active:hover {
-    border-color: shade(@theme_bg_color, 0.7);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 1.06), 1.40)),
-                                     to (shade(shade(@theme_bg_color, 1.06), 1.05)));
+                                     from (shade(shade(@theme_bg_color, 1.06), 1.05)),
+                                     to (shade(shade(@theme_bg_color, 1.06), 0.90)));
 }
 
-.button:focus,
-.button:hover:focus,
-.button:active:focus {
+.button:focus {
     border-color: @theme_selected_bg_color;
 }
 
@@ -240,29 +246,31 @@ GtkAssistant .sidebar {
 }
 
 /* default button */
-/* let's forget the default button for now
 .button.default {
-    border-color: shade(@theme_selected_bg_color, 0.8);
+    border-color: mix(shade(@theme_bg_color, 0.8), @theme_selected_bg_color, 0.3);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_selected_bg_color, 1.16)),
-                                     to (shade(@theme_selected_bg_color, 0.84)));
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.12), @theme_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @theme_selected_bg_color, 0.3)));
 }
 
-.button.default:hover,
-.button.default:active:hover {
-    border-color: shade(@theme_selected_bg_color, 0.7);
+.button.default:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_selected_bg_color, 1.21)),
-                                     to (shade(@theme_selected_bg_color, 0.89)));
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.40), @theme_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @theme_selected_bg_color, 0.3)));
 }
 
 .button.default:active {
-    border-color: shade(@theme_selected_bg_color, 0.7);
+    border-color: mix(shade(@theme_bg_color, 0.7), @theme_selected_bg_color, 0.3);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_selected_bg_color, 0.95)),
-                                     to (shade(@theme_selected_bg_color, 1.05)));
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @theme_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.82), @theme_selected_bg_color, 0.3)));
 }
-*/
+
+.button.default:active:hover {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @theme_selected_bg_color, 0.1)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.90), @theme_selected_bg_color, 0.1)));
+}
 
 /* middle button */
 .linked .entry,
@@ -1661,6 +1669,13 @@ GtkTextView {
                                      to (shade(shade(@theme_bg_color, 1.06), 0.97)));
 }
 
+.primary-toolbar .button:hover {
+    border-color: shade(@theme_bg_color, 0.8);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(shade(@theme_bg_color, 1.06), 1.40)),
+                                     to (shade(shade(@theme_bg_color, 1.06), 1.05)));
+}
+
 .primary-toolbar .button:active {
     border-color: shade(@theme_bg_color, 0.7);
     background-image: -gtk-gradient(linear, left top, left bottom,
@@ -1668,12 +1683,10 @@ GtkTextView {
                                      to (shade(shade(@theme_bg_color, 1.06), 0.82)));
 }
 
-.primary-toolbar .button:hover,
 .primary-toolbar .button:active:hover {
-    border-color: shade(@theme_bg_color, 0.7);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 1.06), 1.40)),
-                                     to (shade(shade(@theme_bg_color, 1.06), 1.05)));
+                                     from (shade(shade(@theme_bg_color, 1.06), 1.05)),
+                                     to (shade(shade(@theme_bg_color, 1.06), 0.90)));
 }
 
 .primary-toolbar .button:insensitive {
