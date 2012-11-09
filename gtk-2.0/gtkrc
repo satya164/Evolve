@@ -190,7 +190,7 @@ style "evolve-button" = "evolve-wider" {
 
 style "evolve-scrollbar" = "evolve-button" {
 	bg[NORMAL] = @bg_color
-	bg[PRELIGHT] = shade (1.4, @selected_bg_color)
+	bg[PRELIGHT] = shade (0.8, @bg_color)
 	bg[ACTIVE] = shade (1.4, @selected_bg_color)
 	
 	engine "murrine" {
