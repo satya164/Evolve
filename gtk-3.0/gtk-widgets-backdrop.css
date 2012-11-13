@@ -24,29 +24,31 @@
  * button *
  **********/
 /* default button */
-/* let's forget the default button for now
 .button.default:backdrop {
-    border-color: shade(@backdrop_selected_bg_color, 0.8);
+    border-color: mix(shade(@theme_bg_color, 0.8), @backdrop_selected_bg_color, 0.3);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@backdrop_selected_bg_color, 1.16)),
-                                     to (shade(@backdrop_selected_bg_color, 0.84)));
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.12), @backdrop_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @backdrop_selected_bg_color, 0.3)));
 }
 
-.button.default:hover:backdrop,
-.button.default:active:hover:backdrop {
-    border-color: shade(@backdrop_selected_bg_color, 0.7);
+.button.default:hover:backdrop {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@backdrop_selected_bg_color, 1.21)),
-                                     to (shade(@backdrop_selected_bg_color, 0.89)));
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.40), @backdrop_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @backdrop_selected_bg_color, 0.3)));
 }
 
 .button.default:active:backdrop {
-    border-color: shade(@backdrop_selected_bg_color, 0.7);
+    border-color: mix(shade(@theme_bg_color, 0.7), @backdrop_selected_bg_color, 0.3);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@backdrop_selected_bg_color, 0.95)),
-                                     to (shade(@backdrop_selected_bg_color, 1.05)));
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @backdrop_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.82), @backdrop_selected_bg_color, 0.3)));
 }
-*/
+
+.button.default:active:hover:backdrop {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @backdrop_selected_bg_color, 0.1)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.90), @backdrop_selected_bg_color, 0.1)));
+}
 
 /****************
  * cell and row *
@@ -71,6 +73,16 @@ GtkIconView.view.cell:selected:focus:backdrop {
                                      from (shade(@backdrop_selected_bg_color, 1.1)),
                                      to (shade(@backdrop_selected_bg_color, 0.9)));
 
+    color: @backdrop_selected_fg_color;
+}
+
+/*******************
+ * symbolic images *
+ *******************/
+.image:selected,
+.image:selected:hover,
+.view.image:selected,
+.view.image:selected:hover {
     color: @backdrop_selected_fg_color;
 }
 
