@@ -25,6 +25,11 @@
 @define-color success_color #4e9a06;
 @define-color error_color #cc0000;
 
+/* osd */
+@define-color osd_base #333;
+@define-color osd_fg #eee;
+@define-color osd_bg alpha(@osd_base, 0.8);
+
 /* backdrop colors */
 @define-color backdrop_selected_bg_color shade (@theme_bg_color, 0.9);
 @define-color backdrop_selected_fg_color @theme_fg_color;
