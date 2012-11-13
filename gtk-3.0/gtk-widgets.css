@@ -24,10 +24,10 @@
     -GtkExpander-expander-size: 11;
     -GtkHTML-link-color: @link_color;
     -GtkIMHtml-hyperlink-color: @link_color;
-    -GtkMenuBar-internal-padding: 0;
     -GtkMenu-horizontal-padding: 0;
-    -GtkMenuItem-arrow-scaling: 0.5;
     -GtkMenu-vertical-padding: 0;
+    -GtkMenuItem-arrow-scaling: 0.5;
+    -GtkMenuBar-internal-padding: 0;
     -GtkNotebook-initial-gap: 0;
     -GtkPaned-handle-size: 3;
     -GtkProgressBar-min-horizontal-bar-height: 10;
@@ -35,8 +35,8 @@
     -GtkRange-slider-width: 10;
     -GtkRange-stepper-size: 10;
     -GtkRange-stepper-spacing: 0;
-    -GtkRange-trough-under-steppers: 1;
     -GtkRange-trough-border: 0;
+    -GtkRange-trough-under-steppers: 1;
     -GtkScrollbar-activate-slider: 1;
     -GtkScrollbar-has-backward-stepper: false;
     -GtkScrollbar-has-forward-stepper: false;
@@ -397,6 +397,8 @@ row:selected:focus {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_selected_bg_color, 1.1)),
                                      to (shade(@theme_selected_bg_color, 0.9)));
+
+    color: @theme_selected_fg_color;
 }
 
 /*******************
@@ -477,6 +479,10 @@ GtkHTML {
 ************/
 GtkCalendar {
     padding: 3px;
+}
+
+GtkCalendar:inconsistent {
+    color: alpha(@theme_fg_color, 0.6);
 }
 
 GtkCalendar.view,
@@ -919,11 +925,15 @@ GtkTreeMenu .menuitem * {
     background-color: transparent;
 }
 
+.menuitem GtkCalendar:inconsistent {
+    color: alpha(@theme_fg_color, 0.6);
+}
+
 .menuitem GtkCalendar,
 .menuitem GtkCalendar.button,
 .menuitem GtkCalendar.header,
 .menuitem GtkCalendar.view {
-    border: 0;
+    border-width: 0;
     background-color: transparent;
     background-image: none;
 }
@@ -1115,22 +1125,21 @@ GtkLevelBar.vertical {
    on the widget
 
 .level-bar.indicator-discrete.fill-block.horizontal:first-child {
-    border-radius: 2px 0 0 2px; */
-
-/* }
+    border-radius: 2px 0 0 2px;
+}
 
 .level-bar.indicator-discrete.fill-block.horizontal:last-child {
-    border-radius: 0 2px 2px 0; */
-
-/* }
+    border-radius: 0 2px 2px 0;
+}
 
 .level-bar.indicator-discrete.fill-block.vertical:first-child {
-    border-radius: 2px 2px 0 0; */
-
-/* }
+    border-radius: 2px 2px 0 0;
+}
 
 .level-bar.indicator-discrete.fill-block.vertical:last-child {
-    border-radius: 0 0 2px 2px; */
+    border-radius: 0 0 2px 2px;
+}
+*/
 
 .level-bar.fill-block.level-high {
     border-color: shade(@success_color, 0.85);
@@ -1211,6 +1220,7 @@ GtkScale.mark {
 GtkScale.trough {
     margin: 6px 0;
     border-color: shade(@theme_bg_color, 0.8);
+    border-radius: 2px;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 1.1)),
                                      to (shade(@theme_bg_color, 1.12)));
@@ -1219,6 +1229,7 @@ GtkScale.trough {
 GtkScale.trough.vertical {
     margin: 0 6px;
     border-color: shade(@theme_bg_color, 0.8);
+    border-radius: 2px;
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@theme_bg_color, 1.1)),
                                      to (shade(@theme_bg_color, 1.12)));
@@ -1264,8 +1275,7 @@ GtkScale.trough.vertical:insensitive,
 }
 
 .scrollbars-junction,
-.scrollbar.trough,
-.scrollbar.trough.vertical {
+.scrollbar.trough {
     border-width: 0;
     border-radius: 0;
     background-image: none;
