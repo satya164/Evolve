@@ -98,14 +98,28 @@ GtkIconView.view.cell:selected:focus:backdrop {
                                     to (shade(@backdrop_selected_bg_color, 0.9)));
 }
 
-.progressbar.vertical:backdrop,
-.progressbar.vertical row:backdrop,
-.progressbar.vertical row:selected:backdrop {
+.progressbar.vertical:backdrop {
     background-image: -gtk-gradient(linear, left top, right top,
                                     from (shade(@backdrop_selected_bg_color, 1.1)),
                                     to (shade(@backdrop_selected_bg_color, 0.9)));
 }
 
+.trough:backdrop,
+.trough row:backdrop,
+.trough row:selected:backdrop {
+    border-width: 1px;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 1.12)));
+}
+
+.trough.vertical:backdrop {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 1.1)));
+}
 
 .level-bar.fill-block:backdrop {
     border-width: 1px;
