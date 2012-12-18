@@ -106,7 +106,6 @@ GtkIconView.view.cell:selected:focus:backdrop {
                                     to (shade(@backdrop_selected_bg_color, 0.9)));
 }
 
-.trough:backdrop,
 .trough row:backdrop,
 .trough row:hover:backdrop,
 .trough row:selected:backdrop,
@@ -117,12 +116,6 @@ GtkIconView.view.cell:selected:focus:backdrop {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 1.1)),
                                      to (shade(@theme_bg_color, 1.12)));
-}
-
-.trough.vertical:backdrop {
-    background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(@theme_bg_color, 1.1)),
-                                     to (shade(@theme_bg_color, 1.1)));
 }
 
 .level-bar.fill-block:backdrop {
@@ -167,28 +160,6 @@ GtkIconView.view.cell:selected:focus:backdrop {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 0.99)),
                                      to (shade(@theme_bg_color, 0.95)));
-}
-
-/*************
- * scrollbar *
- *************/
-.scrollbar.trough:backdrop {
-    border-width: 0;
-    border-radius: 0;
-    background-image: none;
-    background-color: @theme_bg_color;
-}
-
-/**********
- * switch *
- **********/
-GtkSwitch.trough:active:backdrop {
-    border-color: shade(@backdrop_selected_bg_color, 0.8);
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@backdrop_selected_bg_color, 0.97)),
-                                     to (shade(@backdrop_selected_bg_color, 1.0)));
-
-    color: @backdrop_selected_fg_color;
 }
 
 /************

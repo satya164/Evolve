@@ -35,6 +35,16 @@
 @define-color success_color #4e9a06;
 @define-color error_color #cc0000;
 
+/* widget colors */
+@define-color menubar_bg_color @theme_bg_color;
+@define-color menubar_fg_color @theme_fg_color;
+@define-color toolbar_bg_color @theme_bg_color;
+@define-color toolbar_fg_color @theme_fg_color;
+@define-color menu_bg_color @theme_bg_color;
+@define-color menu_fg_color @theme_fg_color;
+@define-color panel_bg_color @theme_bg_color;
+@define-color panel_fg_color @theme_fg_color;
+
 /* osd */
 @define-color osd_base #333;
 @define-color osd_fg #eee;

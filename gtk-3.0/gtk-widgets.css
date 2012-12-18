@@ -811,7 +811,7 @@ GtkLabel:insensitive {
 GtkTreeMenu.menu,
 GtkMenuToolButton.menu,
 GtkComboBox .menu {
-    background-color: shade(@theme_bg_color, 1.40);
+    background-color: shade(@menu_bg_color, 1.40);
 }
 
 .primary-toolbar .button .menu,
@@ -821,8 +821,8 @@ GtkComboBox .menu {
     padding: 0;
     border-width: 0;
     border-radius: 0;
-    background-color: shade(@theme_bg_color, 1.40);
-    color: @theme_fg_color;
+    background-color: shade(@menu_bg_color, 1.40);
+    color: @menu_fg_color;
 }
 
 .menu.button:hover,
@@ -831,7 +831,7 @@ GtkComboBox .menu {
 .menu.button:insensitive,
 .menu.button {
     border-width: 0;
-    background-color: shade(@theme_bg_color, 1.40);
+    background-color: shade(@menu_bg_color, 1.40);
     background-image: none;
 }
 
@@ -842,7 +842,9 @@ GtkComboBox .menu {
     -GtkWidget-window-dragging: true;
 
     border-width: 0;
-    color: @theme_fg_color;
+    background-color: @menubar_bg_color;
+    background-image: none;
+    color: @menubar_fg_color;
 }
 
 /***************
@@ -875,7 +877,7 @@ GtkTreeMenu .menuitem {
 }
 
 GtkTreeMenu .menuitem * {
-    color: @theme_fg_color;
+    color: @menu_fg_color;
 }
 
 .menuitem,
@@ -904,7 +906,7 @@ GtkTreeMenu .menuitem * {
 
 .menu .menuitem:insensitive,
 .menu .menuitem *:insensitive {
-    color: mix(@theme_fg_color, @theme_bg_color, 0.5);
+    color: mix(@menu_fg_color, @menu_bg_color, 0.5);
 }
 
 .menuitem.check,
@@ -925,7 +927,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .menuitem GtkCalendar:inconsistent {
-    color: alpha(@theme_fg_color, 0.6);
+    color: alpha(@menu_fg_color, 0.6);
 }
 
 .menuitem GtkCalendar,
@@ -938,14 +940,14 @@ GtkTreeMenu .menuitem * {
 }
 
 .menuitem .entry {
-    border-color: shade(@theme_bg_color, 0.7);
-    background-color: @theme_base_color;
+    border-color: shade(@menu_bg_color, 0.7);
+    background-color: shade(@menu_bg_color, 1.40);
     background-image: none;
-    color: @theme_text_color;
+    color: @menu_fg_color;
 }
 
 .menuitem .accelerator {
-    color: alpha(@theme_fg_color, 0.6);
+    color: alpha(@menu_fg_color, 0.6);
 }
 
 .menuitem .accelerator:hover {
@@ -953,7 +955,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .menuitem .accelerator:insensitive {
-    color: alpha(mix(@theme_fg_color, @theme_bg_color, 0.5), 0.6);
+    color: alpha(mix(@menu_fg_color, @menu_bg_color, 0.5), 0.6);
 }
 
 /************
@@ -1371,8 +1373,8 @@ GtkScrolledWindow GtkViewport.frame {
     -GtkMenuItem-horizontal-padding: 0;
     -GtkWidget-separator-height: 1;
 
-    border-color: shade(@theme_bg_color, 1.12);
-    color: shade(@theme_bg_color, 1.12);
+    border-color: shade(@menu_bg_color, 1.12);
+    color: shade(@menu_bg_color, 1.12);
 }
 
 GtkComboBox .separator {
@@ -1655,8 +1657,8 @@ GtkTextView {
     padding: 3px;
     border-style: none;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.0)),
-                                     to (shade(@theme_bg_color, 0.9)));
+                                     from (shade(@toolbar_bg_color, 1.0)),
+                                     to (shade(@toolbar_bg_color, 0.9)));
 }
 
 /* primary-toolbar */
@@ -1668,12 +1670,12 @@ GtkTextView {
     padding: 3px;
     border-width: 0 0 1px 0;
     border-style: solid;
-    border-color: shade(@theme_bg_color, 0.8);
+    border-color: shade(@toolbar_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.0)),
-                                     to (shade(@theme_bg_color, 0.9)));
+                                     from (shade(@toolbar_bg_color, 1.0)),
+                                     to (shade(@toolbar_bg_color, 0.9)));
 
-    color: @theme_fg_color;
+    color: @toolbar_fg_color;
 }
 
 .primary-toolbar GtkComboBox,
@@ -1685,55 +1687,69 @@ GtkTextView {
     border-radius: 2px;
     background-color: transparent;
     background-image: none;
-    color: @theme_fg_color;
+    color: @toolbar_fg_color;
 }
 
 .primary-toolbar .raised .button,
-.primary-toolbar .raised.button {
-    border-color: shade(@theme_bg_color, 0.8);
+.primary-toolbar .raised.button,
+.toolbar .button {
+    border-color: shade(@toolbar_bg_color, 0.8);
+    background-color: transparent;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 1.06), 1.12)),
-                                     to (shade(shade(@theme_bg_color, 1.06), 0.97)));
+                                     from (shade(shade(@toolbar_bg_color, 1.06), 1.12)),
+                                     to (shade(shade(@toolbar_bg_color, 1.06), 0.97)));
+    color: @toolbar_fg_color;
 }
 
-.primary-toolbar .button:hover {
-    border-color: shade(@theme_bg_color, 0.8);
+.primary-toolbar .button:hover,
+.toolbar .button:hover {
+    border-color: shade(@toolbar_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 1.06), 1.40)),
-                                     to (shade(shade(@theme_bg_color, 1.06), 1.05)));
+                                     from (shade(shade(@toolbar_bg_color, 1.06), 1.40)),
+                                     to (shade(shade(@toolbar_bg_color, 1.06), 1.05)));
 }
 
-.primary-toolbar .button:active {
-    border-color: shade(@theme_bg_color, 0.7);
+.primary-toolbar .button:active,
+.toolbar .button:active {
+    border-color: shade(@toolbar_bg_color, 0.7);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 1.06), 0.97)),
-                                     to (shade(shade(@theme_bg_color, 1.06), 0.82)));
+                                     from (shade(shade(@toolbar_bg_color, 1.06), 0.97)),
+                                     to (shade(shade(@toolbar_bg_color, 1.06), 0.82)));
 }
 
-.primary-toolbar .button:active:hover {
+.primary-toolbar .button:active:hover,
+.toolbar .button:active:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 1.06), 1.05)),
-                                     to (shade(shade(@theme_bg_color, 1.06), 0.90)));
+                                     from (shade(shade(@toolbar_bg_color, 1.06), 1.05)),
+                                     to (shade(shade(@toolbar_bg_color, 1.06), 0.90)));
 }
 
-.primary-toolbar .button:insensitive {
-    border-color: shade(@theme_bg_color, 0.9);
+.primary-toolbar .button:insensitive,
+.toolbar .button:insensitive {
+    border-color: shade(@toolbar_bg_color, 0.9);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.12)),
-                                     to (shade(@theme_bg_color, 0.97)));
+                                     from (shade(@toolbar_bg_color, 1.12)),
+                                     to (shade(@toolbar_bg_color, 0.97)));
 }
 
-.primary-toolbar .button:active:insensitive {
-    border-color: shade(@theme_bg_color, 0.8);
+.primary-toolbar .button:active:insensitive,
+.toolbar .button:active:insensitive {
+    border-color: shade(@toolbar_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 0.97)),
-                                     to (shade(@theme_bg_color, 0.82)));
+                                     from (shade(@toolbar_bg_color, 0.97)),
+                                     to (shade(@toolbar_bg_color, 0.82)));
 }
 
-.primary-toolbar .entry,
+.primary-toolbar .entry {
+    border-top-color: shade(@toolbar_bg_color, 0.7);
+    border-right-color: shade(@toolbar_bg_color, 0.76);
+    border-left-color: shade(@toolbar_bg_color, 0.76);
+    border-bottom-color: shade(@toolbar_bg_color, 0.8);
+}
+
 .primary-toolbar .entry:active,
 .primary-toolbar .entry:focus {
-    border-radius: 2px;
+    border-color: shade(@theme_selected_bg_color, 0.8);
 }
 
 .primary-toolbar GtkSeparatorToolItem,

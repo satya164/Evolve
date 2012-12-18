@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5588ee\ntext_color:#000000\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5588ee"
+gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5588ee\ntext_color:#000000\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5588ee\nmenubar_bg_color:#cccccc\nmenubar_fg_color:#333333\nmenu_bg_color:#cccccc\nmenu_fg_color:#333333"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
@@ -315,21 +315,21 @@ style "evolve-menu" {
 	xthickness = 0
 	
 	bg[SELECTED] = @selected_bg_color
-	bg[NORMAL] = shade (1.40, @bg_color)
+	bg[NORMAL] = shade (1.40, @menu_bg_color)
 	bg[PRELIGHT] = @selected_bg_color
-	bg[ACTIVE] = shade (1.40, @bg_color)
-	bg[INSENSITIVE] = shade (1.40, @bg_color)
-	fg[NORMAL] = @fg_color
+	bg[ACTIVE] = shade (1.40, @menu_bg_color)
+	bg[INSENSITIVE] = shade (1.40, @menu_bg_color)
+	fg[NORMAL] = @menu_fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
+	fg[INSENSITIVE] = mix (0.85, shade (0.75, @menu_bg_color), @menu_fg_color)
 	text[NORMAL] = @text_color
 	base[NORMAL] = @base_color
 	text[PRELIGHT] = @selected_fg_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
-	text[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
+	text[INSENSITIVE] = mix (0.85, shade (0.75, @menu_bg_color), @menu_fg_color)
 
 	engine "murrine" {
 		roundness = 0
@@ -339,7 +339,7 @@ style "evolve-menu" {
 style "evolve-menu-item" = "evolve-wider" {
 	bg[SELECTED]	= @selected_bg_color
 	bg[PRELIGHT]	= @selected_bg_color
-	fg[NORMAL]	= @fg_color # Fix for XFCE menu text
+	fg[NORMAL]	= @menu_fg_color # Fix for XFCE menu text
 	fg[PRELIGHT]	= @selected_fg_color
 	fg[SELECTED]	= @selected_fg_color
 
@@ -360,20 +360,29 @@ style "evolve-menubar" {
 	ythickness = 0
 
 	bg[SELECTED] = @selected_bg_color
-	bg[NORMAL] = @bg_color
+	bg[NORMAL] = @menubar_bg_color
 	bg[PRELIGHT] = @selected_bg_color
-	bg[ACTIVE] = shade (1.40, @bg_color)
-	bg[INSENSITIVE] = shade (1.40, @bg_color)
-	fg[NORMAL] = @fg_color
+	bg[ACTIVE] = shade (1.40, @menubar_bg_color)
+	bg[INSENSITIVE] = shade (1.40, @menubar_bg_color)
+	fg[NORMAL] = @menubar_fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
+	fg[INSENSITIVE] = mix (0.85, shade (0.75, @menubar_bg_color), @menubar_fg_color)
 	text[NORMAL] = @text_color
 	text[PRELIGHT] = @selected_fg_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
-	text[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
+	text[INSENSITIVE] = mix (0.85, shade (0.75, @base_color), @text_color)
+
+	engine "murrine" {
+		roundness = 0
+	}
+}
+
+style "evolve-menubaritem" {
+	xthickness = 3
+	ythickness = 3
 
 	engine "murrine" {
 		roundness = 0
@@ -584,11 +593,12 @@ widget_class "*<GtkProgressBar>" style "evolve-progressbar"
 widget_class "*<GtkComboBoxEntry>*" style "evolve-comboboxentry"
 widget_class "*<GtkCombo>*" style "evolve-comboboxentry"
 
-widget_class "*<GtkMenuBar>*" style "evolve-menubar"
 widget_class "*<GtkMenu>*" style "evolve-menu"
 widget_class "*<GtkMenuItem>*" style "evolve-menu-item"
 widget_class "*<GtkSeparatorMenuItem>*" style "evolve-separator-menu-item"
 widget_class "*Menu*.*Sepa*"  style "evolve-separator-menu-item"
+widget_class "*<GtkMenuBar>*" style "evolve-menubar"
+widget_class "*<GtkMenuBar>*<GtkMenuItem>*" style "evolve-menubaritem"
 
 widget_class "*.<GtkFrame>.<GtkLabel>" style "evolve-frame-title"
 
