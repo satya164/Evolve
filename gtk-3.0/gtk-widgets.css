@@ -108,16 +108,12 @@ GtkWindow {
  * common effects *
  ******************/
 /* transitions animations */
-/* disabled to fix memory-leak
 .button,
-.slider {
-    transition: background .15s linear;
+.slider,
+.check,
+.radio {
+    transition: background .15s ease-in-out;
 }
-
-.entry {
-    transition: border .15s ease;
-}
-*/
 
 /* inset shadow */
 .button:active,
