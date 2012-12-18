@@ -223,7 +223,7 @@ GraniteWidgetsPopOver .entry {
  * wingpanel *
  *************/
 .panel {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: alpha (#000, 0.6);
     color: #fff;
 }
 
@@ -238,8 +238,15 @@ GraniteWidgetsPopOver .entry {
 .composited-indicator,
 .wingpanel-app-button, 
 .wingpanel-indicator-button {
+    padding: 0 3px;
     background-color: transparent;
     color: #fff;
+}
+
+.composited-indicator.menuitem:active,
+.composited-indicator.menuitem:prelight {
+    border-style: none;
+    background-image: none;
 }
 
 /**********
