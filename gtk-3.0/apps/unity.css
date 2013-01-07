@@ -24,8 +24,8 @@ UnityPanelWidget,
 .unity-panel.menubar .menuitem *:hover {
     border-color: shade(@panel_bg_color, 0.7);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@panel_bg_color, 1.06), 0.97)),
-                                     to (shade(shade(@panel_bg_color, 1.06), 0.82)));
+                                     from (shade(@panel_bg_color, 0.97)),
+                                     to (shade(@panel_bg_color, 0.82)));
 
     color: @panel_fg_color;
 }
