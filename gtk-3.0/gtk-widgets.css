@@ -104,6 +104,11 @@ GtkWindow {
     color: @theme_selected_fg_color;
 }
 
+.background {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
 /******************
  * common effects *
  ******************/
@@ -382,6 +387,13 @@ GtkAssistant .sidebar {
     border-width: 0;
     border-radius: 0;
     background-color: @theme_base_color;
+    color: @theme_text_color;
+}
+
+.cell:selected,
+.cell:selected:focus {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 row:selected,
@@ -641,6 +653,11 @@ GtkLabel:insensitive {
 /***********
  * infobar *
  ***********/
+GtkInfoBar {
+    border-width: 0;
+    border-style: none;
+}
+
 .info {
     border-width: 1px;
     border-style: solid;
@@ -739,8 +756,8 @@ GtkLabel:insensitive {
 .floating-bar {
     border-width: 1px;
     border-style: solid;
-    border-radius: 2px;
     border-color: shade(@theme_bg_color, 0.8);
+    border-radius: 2px;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 1.06), 1.12)),
                                      to (shade(shade(@theme_bg_color, 1.06), 0.97)));
@@ -922,15 +939,8 @@ GtkTreeMenu .menuitem * {
     background-color: transparent;
 }
 
-.menuitem GtkCalendar:inconsistent {
-    color: alpha(@menu_fg_color, 0.6);
-}
-
-.menuitem GtkCalendar,
-.menuitem GtkCalendar.button,
-.menuitem GtkCalendar.header,
-.menuitem GtkCalendar.view {
-    border-width: 0;
+.menuitem GtkCalendar.button {
+    border-style: none;
     background-color: transparent;
     background-image: none;
 }
@@ -1095,6 +1105,7 @@ GtkLevelBar.vertical {
 
 .level-bar.trough {
     padding: 2px;
+    border-radius: 2px;
 }
 
 .level-bar.fill-block {
@@ -1293,7 +1304,7 @@ GtkScale.trough.vertical:insensitive,
 .scrollbar.slider {
     border-width: 3px;
     border-color: transparent;
-    border-radius: 15px;
+    border-radius: 7px;
     background-color: shade(@theme_bg_color, 0.7);
 }
 
