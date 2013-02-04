@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5588ee\ntext_color:#000000\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5588ee\nmenubar_bg_color:#cccccc\nmenubar_fg_color:#333333\nmenu_bg_color:#cccccc\nmenu_fg_color:#333333"
+gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5588ee\ntext_color:#000000\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5588ee\ntoolbar_bg_color:#cccccc\ntoolbar_fg_color:#333333\nmenubar_bg_color:#cccccc\nmenubar_fg_color:#333333\nmenu_bg_color:#cccccc\nmenu_fg_color:#333333"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
@@ -356,7 +356,7 @@ style "evolve-separator-menu-item" {
 	GtkSeparatorMenuItem::horizontal-padding = 0
 }
 
-style "evolve-menubar" {
+style "evolve-menubar" = "evolve-default" {
 	ythickness = 0
 
 	bg[SELECTED] = @selected_bg_color
@@ -364,16 +364,12 @@ style "evolve-menubar" {
 	bg[PRELIGHT] = @selected_bg_color
 	bg[ACTIVE] = shade (1.40, @menubar_bg_color)
 	bg[INSENSITIVE] = shade (1.40, @menubar_bg_color)
+
 	fg[NORMAL] = @menubar_fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
 	fg[INSENSITIVE] = mix (0.85, shade (0.75, @menubar_bg_color), @menubar_fg_color)
-	text[NORMAL] = @text_color
-	text[PRELIGHT] = @selected_fg_color
-	text[SELECTED] = @selected_fg_color
-	text[ACTIVE] = @selected_fg_color
-	text[INSENSITIVE] = mix (0.85, shade (0.75, @base_color), @text_color)
 
 	engine "murrine" {
 		roundness = 0
@@ -392,10 +388,39 @@ style "evolve-menubaritem" {
 # Toolbars
 
 style "evolve-toolbar" = "evolve-default" {
-	bg[NORMAL] = @bg_color
+
+	bg[NORMAL] = @toolbar_bg_color
+	bg[PRELIGHT] = shade (1.02, @toolbar_bg_color)
+	bg[SELECTED] = @selected_bg_color
+	bg[INSENSITIVE] = @toolbar_bg_color
+	bg[ACTIVE] = shade (0.9, @toolbar_bg_color)
+
+	fg[NORMAL] = @toolbar_fg_color
+	fg[PRELIGHT] = @toolbar_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @toolbar_fg_color
+	fg[INSENSITIVE] = mix (0.5, @toolbar_bg_color, @toolbar_fg_color)
 
 	engine "murrine" {
 		gradient_shades = { 1.00, 0.95, 0.94, 0.90 }
+	}
+}
+
+style "evolve-toolbutton" = "evolve-button" {
+
+	bg[NORMAL] = @toolbar_bg_color
+	bg[PRELIGHT] = shade (1.02, @toolbar_bg_color)
+	bg[SELECTED] = @selected_bg_color
+	bg[INSENSITIVE] = @toolbar_bg_color
+	bg[ACTIVE] = shade (0.9, @toolbar_bg_color)
+
+	fg[NORMAL] = @toolbar_fg_color
+	fg[PRELIGHT] = @toolbar_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @toolbar_fg_color
+	fg[INSENSITIVE] = mix (0.5, @toolbar_bg_color, @toolbar_fg_color)
+
+	engine "murrine" {
 	}
 }
 
@@ -599,6 +624,11 @@ widget_class "*<GtkSeparatorMenuItem>*" style "evolve-separator-menu-item"
 widget_class "*Menu*.*Sepa*"  style "evolve-separator-menu-item"
 widget_class "*<GtkMenuBar>*" style "evolve-menubar"
 widget_class "*<GtkMenuBar>*<GtkMenuItem>*" style "evolve-menubaritem"
+
+widget_class "*GtkToolButton*" style "evolve-toolbutton"
+widget_class "*GtkToggleToolButton*" style "evolve-toolbutton"
+widget_class "*GtkMenuToolButton*" style "evolve-toolbutton"
+widget_class "*GtkToolbar*Button" style "evolve-toolbutton"
 
 widget_class "*.<GtkFrame>.<GtkLabel>" style "evolve-frame-title"
 
