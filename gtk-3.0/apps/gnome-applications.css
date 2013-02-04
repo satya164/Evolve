@@ -62,7 +62,7 @@ PanelApplet .button {
 PanelApplet .button:active {
     border-width: 0 1px;
     border-radius: 0;
-    border-color: shade(@menu_bg_color, 0.8);
+    border-color: shade(@panel_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@panel_bg_color, 0.97)),
                                      to (shade(@panel_bg_color, 0.82)));
