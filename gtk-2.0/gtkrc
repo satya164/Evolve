@@ -528,8 +528,26 @@ style "xfsm-logout" {
         }	
 }
 
-widget "*Xfce*Panel*" style "evolve-panel"
-class "*Xfce*Panel*" style "evolve-panel"
+style "thunar-sidepane"
+{
+	base[NORMAL]		= shade (0.9,@base_color)
+	base[INSENSITIVE]	= shade (0.9,@base_color)
+	
+	bg[NORMAL]		= shade (0.92,@base_color)
+	bg[PRELIGHT]		= shade (1.5,@selected_bg_color)
+}
+
+style "workspace-switcher" = "evolve-panel" {
+	bg[SELECTED]	= mix (0.3, shade (1.35,@selected_bg_color), shade (0.9,@base_color))
+}
+
+widget_class "*ThunarShortcutsView*"	style "thunar-sidepane"
+widget_class "*ThunarTreeView*"		style "thunar-sidepane"
+widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView*"	style "thunar-sidepane"
+
+widget "*Xfce*Panel*"		style "evolve-panel"
+class "*Xfce*Panel*"		style "evolve-panel"
+widget "*WnckPager*"		style "workspace-switcher"
 
 widget_class "*XfceHeading*" style "xfce-header"
 widget_class "*XfceDesktop*" style "xfdesktop-windowlist"
