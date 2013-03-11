@@ -73,7 +73,8 @@ style "evolve-default" {
 	GtkTreeView::expander-size = 11
 	GtkTreeView::vertical-separator = 0
 
-	GtkWidget::focus-padding = 0
+	GtkWidget::focus-padding = 2
+	GtkWidget::new-tooltip-style = 0
 
 	GtkWidget::wide-separators = 1
 	GtkWidget::separator-width = 1
@@ -84,10 +85,6 @@ style "evolve-default" {
 
 	WnckTasklist::fade-overlay-rect = 0
 
-	GnomeHRef::link_color = @link_color
-	GtkHTML::link-color = @link_color
-	GtkIMHtml::hyperlink-color = @link_color
- 	GtkIMHtmlr::hyperlink-color = @link_color
 	GtkWidget::link-color = @link_color
 	GtkWidget::visited-link-color = @text_color
 
@@ -204,6 +201,13 @@ style "evolve-scrollbar" = "evolve-button" {
 	}
 }
 
+style "evolve-overlay-scrollbar" {
+	bg[ACTIVE] = shade (0.8, @bg_color)
+	bg[INSENSITIVE] = shade (0.97, @bg_color)
+	base[SELECTED]      = shade (0.6, @base_color)
+	base[INSENSITIVE]   = shade (0.85, @base_color)
+}
+
 style "evolve-scale" = "evolve-default" {
 	bg[NORMAL] = @bg_color
 	bg[ACTIVE] = @bg_color
@@ -290,13 +294,6 @@ style "evolve-entry" = "evolve-wider" {
 	}
 }
 
-style "evolve-overlay-scrollbar" {
-	bg[ACTIVE] = shade (0.8, @bg_color)
-	bg[INSENSITIVE] = shade (0.97, @bg_color)
-	base[SELECTED]      = shade (0.6, @base_color)
-	base[INSENSITIVE]   = shade (0.85, @base_color)
-}
-
 style "metacity-frame" = "evolve-default" {
 	bg[SELECTED] = @selected_bg_color
 }
@@ -324,8 +321,8 @@ style "evolve-menu" {
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
 	fg[INSENSITIVE] = mix (0.85, shade (0.75, @menu_bg_color), @menu_fg_color)
+
 	text[NORMAL] = @text_color
-	base[NORMAL] = @base_color
 	text[PRELIGHT] = @selected_fg_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
@@ -486,18 +483,12 @@ widget "*gimmie*" style "bold-panel-item"
 
 # XFCE Styles
 
-style "xfce-header"
-{
+style "xfce-header" {
 	bg[NORMAL]	 = shade (0.9, @bg_color)
 	base[NORMAL]	 = shade (1.18, @bg_color)
-	engine "murrine"
-	{
-		textstyle = 1
-	}
 }
 
-style "xfdesktop-windowlist"
-{
+style "xfdesktop-windowlist" {
 	bg[NORMAL] = @base_color
 	fg[INSENSITIVE] = shade (0.95, @base_color)
 	text[INSENSITIVE] = shade (0.95, @base_color)
@@ -522,32 +513,29 @@ style "xfdesktop-icon-view" {
     }
 }
 
-style "xfwm-tabwin"
-{
+style "xfwm-tabwin" {
 	Xfwm4TabwinWidget::border-width = 1
 	Xfwm4TabwinWidget::icon-size = 64
-	engine "murrine"
-	{
+
+	engine "murrine" {
 		focusstyle = 0
 	}
 }
 
-style "xfsm-logout"
-{
-	engine "murrine"
-        {
-		highlight_shade = 1.00
+style "xfsm-logout" {
+
+	engine "murrine" {
         }	
 }
 
 widget "*Xfce*Panel*" style "evolve-panel"
 class "*Xfce*Panel*" style "evolve-panel"
 
-widget_class "*XfceHeading*"			style "xfce-header"
-widget_class "*XfceDesktop*"			style "xfdesktop-windowlist"
-widget_class "*XfdesktopIconView*"		style "xfdesktop-icon-view"
-widget "xfwm4-tabwin*"				style "xfwm-tabwin"
-widget_class "*XfsmLogoutDialog*"		style "xfsm-logout"
+widget_class "*XfceHeading*" style "xfce-header"
+widget_class "*XfceDesktop*" style "xfdesktop-windowlist"
+widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
+widget "xfwm4-tabwin*" style "xfwm-tabwin"
+widget_class "*XfsmLogoutDialog*" style "xfsm-logout"
 
 # Google Chrome/Chromium Styles (requires 9.0.597 or newer)
 
@@ -558,8 +546,7 @@ style "chromium-toolbar-button" {
 	}
 }
 
-style "chrome-gtk-frame"
-{
+style "chrome-gtk-frame" {
 	ChromeGtkFrame::frame-color = @bg_color
 	ChromeGtkFrame::inactive-frame-color = @bg_color
 
@@ -644,40 +631,6 @@ widget_class "*<GtkScrolledWindow>*<OsScrollbar>" style "evolve-overlay-scrollba
 
 # Workarounds and Non-Standard Styling
 
-style "evolution-hack" = "evolve-default" {
-	bg[NORMAL] = shade (1.14, @bg_color)
-	bg[PRELIGHT] = shade (1.18, @bg_color)
-	bg[ACTIVE] = shade (0.75, @bg_color)
-	bg[SELECTED] = @selected_bg_color
-	fg[ACTIVE] = @selected_fg_color
-	fg[SELECTED] = @selected_fg_color
-}
-
-widget_class "*.ETable.ECanvas" style "evolve-treeview-header"
-widget_class "*.ETree.ECanvas" style "evolve-treeview-header"
-widget_class "*GtkCTree*" style "evolution-hack"
-widget_class "*GtkList*" style "evolution-hack"
-widget_class "*GtkCList*" style "evolution-hack"
-widget_class "*.ETree.*" style "evolution-hack"
-widget_class "*EInfoLabel*" style "evolution-hack"
-
-style "evolve-nautilus-location"
-{
-	bg[NORMAL] = shade (1.25, @selected_bg_color)
-}
-
-widget "*.nautilus-extra-view-widget" style : highest "evolve-nautilus-location"
-
-style "menuitem-text-is-fg-color-workaround" {
-	text[NORMAL] = @text_color
-	text[PRELIGHT] = @selected_fg_color
-	text[SELECTED] = @selected_fg_color
-	text[ACTIVE] = @fg_color
-	text[INSENSITIVE] = mix (0.85, shade (0.75, @bg_color), @fg_color)
-}
-
-widget "*.gtk-combobox-popup-menu.*" style "menuitem-text-is-fg-color-workaround"
-
 style "text-is-fg-color-workaround" {
 	text[NORMAL] = @text_color
 	text[PRELIGHT] = @fg_color
@@ -700,8 +653,7 @@ widget_class "*<GtkListItem>*" style "fg-is-text-color-workaround"
 widget_class "*<GtkCList>" style "fg-is-text-color-workaround"
 widget_class "*<EelEditableLabel>" style "fg-is-text-color-workaround"
 
-style "evolve-evo-new-button-workaround"
-{
+style "evolve-evo-new-button-workaround" {
 	engine "murrine" {
 		toolbarstyle = 0
 	}
@@ -710,11 +662,10 @@ style "evolve-evo-new-button-workaround"
 widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "evolve-evo-new-button-workaround"
 
 style "inkscape-toolbar-fix" {
-        engine "murrine" 
-        {
-                gradient_shades = { 1.00, 1.00, 1.00, 1.00 }
-                highlight_shade = 1.00
-   }
+	engine "murrine" {
+                gradient_shades = { 1.0, 1.0, 1.0, 1.0 }
+                highlight_shade = 1.0
+	}
 }
 
 #widget "*GtkHandleBox*" style "inkscape-toolbar-fix"
@@ -746,9 +697,9 @@ style "performance-fix" {
 	}
 }
 
-widget_class "*gtkmm__GtkWindow*"	style "performance-fix" # Inkscape
-widget_class "*GimpDisplayShell*"	style "performance-fix" # Gimp
-widget_class "*GimpToolbox*"		style "performance-fix"
-widget_class "*GimpMenuDock*"		style "performance-fix"
-widget "*OOoFixed*"			style "performance-fix" # Openoffice/Libreoffice
-widget_class "*MozContainer*"		style "performance-fix" # Firefox (Not sure if this one does anything though.)
+widget_class "*gtkmm__GtkWindow*" style "performance-fix" # Inkscape
+widget_class "*GimpDisplayShell*" style "performance-fix" # Gimp
+widget_class "*GimpToolbox*" style "performance-fix"
+widget_class "*GimpMenuDock*" style "performance-fix"
+widget "*OOoFixed*" style "performance-fix" # Openoffice/Libreoffice
+widget_class "*MozContainer*" style "performance-fix" # Firefox (Not sure if this one does anything though.)
