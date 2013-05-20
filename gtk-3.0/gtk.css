@@ -2,7 +2,7 @@
 @define-color bg_color #ccc;
 @define-color fg_color #333;
 @define-color base_color #fff;
-@define-color text_color #000;
+@define-color text_color #111;
 @define-color selected_bg_color #58e;
 @define-color selected_fg_color #eee;
 @define-color tooltip_bg_color #ccc;
