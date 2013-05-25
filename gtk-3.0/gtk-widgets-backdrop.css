@@ -7,20 +7,6 @@
 	color: @backdrop_selected_fg_color;
 }
 
-/******************
- * visual effects *
- ******************/
-/* remove shadows */
-.button:active:backdrop,
-.toolbar .button:active:backdrop,
-.primary-toolbar .button:active:backdrop {
-    box-shadow: none;
-}
-
-.entry:backdrop {
-    box-shadow: none;
-}
-
 /**********
  * button *
  **********/
