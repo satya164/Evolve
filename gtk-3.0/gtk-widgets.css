@@ -1901,6 +1901,13 @@ GtkSwitch.slider {
                                      to (shade(shade(@theme_bg_color, 1.06), 0.97)));
 }
 
+GtkSwitch.slider:insensitive {
+    border-color: shade(@theme_bg_color, 0.9);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_bg_color, 1.12)),
+                                     to (shade(@theme_bg_color, 0.97)));
+}
+
 GtkSwitch.trough {
     border-color: shade(@theme_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
