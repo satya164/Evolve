@@ -56,8 +56,8 @@
  * base states *
  ***************/
 .background {
-    color: @theme_fg_color;
     background-color: @theme_bg_color;
+    color: @theme_fg_color;
 }
 
 .background.client-decorated {
@@ -556,6 +556,8 @@ column-header .button:hover,
 column-header .button:active:hover,
 column-header .button:hover:focus,
 column-header .button:active:hover:focus {
+    border-color: shade(@theme_bg_color, 0.9);
+    border-bottom-color: shade(@theme_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 1.06), 1.40)),
                                      to (shade(shade(@theme_bg_color, 1.06), 1.05)));
@@ -1133,31 +1135,36 @@ GtkTreeMenu .menuitem * {
     padding: 0;
     border-width: 1px;
     border-style: solid;
-    border-color: shade(@theme_bg_color, 0.8);
+    border-color: shade(@theme_base_color, 0.7);
     border-radius: 2px;
-    background-color: shade(@theme_bg_color, 1.12);
+    background-color: @theme_base_color;
     background-image: none;
     background-clip: border-box;
 }
 
+.notebook GtkViewport {
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+}
+
 .notebook tab {
     padding: 3px;
-    border-color: shade(@theme_bg_color, 0.9);
+    border-color: shade(@theme_base_color, 0.75);
     border-radius: 2px;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 0.97)),
-                                     to (shade(@theme_bg_color, 0.92)));
+                                     from (shade(@theme_base_color, 0.87)),
+                                     to (shade(@theme_base_color, 0.82)));
 }
 
 .notebook tab:active {
-    border-color: shade(@theme_bg_color, 0.8);
+    border-color: shade(@theme_base_color, 0.7);
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.12)),
-                                     to (shade(@theme_bg_color, 1.12)));
+                                     from (shade(@theme_base_color, 1.0)),
+                                     to (shade(@theme_base_color, 1.0)));
 }
 
 .notebook tab GtkLabel {
-    color: @theme_fg_color;
+    color: @theme_text_color;
 }
 
 .notebook tab.top {
@@ -1449,7 +1456,7 @@ GtkLevelBar.vertical {
 .scale.trough.vertical:insensitive,
 .scale.highlight.bottom:insensitive {
     border-color: shade(@theme_bg_color, 0.9);
-    background-image: -gtk-gradient(linear, left top, left bottom,
+    background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@theme_bg_color, 0.99)),
                                      to (shade(@theme_bg_color, 0.95)));
 }
@@ -1582,6 +1589,7 @@ GtkScrolledWindow GtkViewport.frame {
     -GtkMenuItem-horizontal-padding: 0;
     -GtkWidget-separator-height: 1;
 
+    background-color: transparent;
     border-style: none;
     color: shade(@menu_bg_color, 1.12);
 }
@@ -2373,8 +2381,7 @@ GtkColorButton.button {
  ************/
 GtkTreeView {
     -GtkTreeView-vertical-separator: 0;
-
-    -GtkWidget-focus-line-width: 1;
+    -GtkWidget-focus-line-width: 0;
     -GtkWidget-focus-padding: 1;
 }
 
@@ -2401,6 +2408,12 @@ GtkViewport.frame {
 .view {
     background-color: @theme_base_color;
     color: @theme_text_color;
+}
+
+.view:insensitive,
+.view:insensitive:insensitive {
+    background-color: shade(@theme_base_color, 0.9);
+    color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 }
 
 .view:selected,

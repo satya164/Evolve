@@ -92,14 +92,10 @@ WnckPager, WnckTasklist {
 }
 
 .nautilus-desktop.nautilus-canvas-item:active {
-    background-color: alpha(@theme_bg_color, 0.8);
-    background-image: none;
     color: @theme_fg_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item:selected {
-    background-color: alpha(@theme_selected_bg_color, 0.8);
-    background-image: none;
     color: @theme_selected_fg_color;
 }
 
