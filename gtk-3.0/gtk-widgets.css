@@ -512,6 +512,9 @@ row:selected:focus {
                                      to (shade(@theme_selected_bg_color, 0.9)));
 
     color: @theme_selected_fg_color;
+
+    -GtkWidget-focus-padding: 1;
+    -GtkWidget-focus-line-width: 0;
 }
 
 /*******************
