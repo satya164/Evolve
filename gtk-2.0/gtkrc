@@ -192,7 +192,7 @@ style "evolve-scrollbar" = "evolve-button" {
 	
 	engine "murrine" {
 		roundness = 4
-		border_shades = { 1.4, 1.4  }
+		border_shades = { 1.4, 1.4 }
 		gradient_shades = { 0.7, 0.7, 0.7, 0.7 }
 		trough_shades = { 1.0, 1.0 }
 		trough_border_shades = { 1.2, 1.2 }
