@@ -13,16 +13,17 @@
 @define-color dark_shadow #000;
 
 /* misc colors used by gtk+ */
-@define-color info_fg_color rgb (0, 0, 0);
-@define-color info_bg_color rgb (252, 246, 202);
-@define-color warning_fg_color rgb (0, 0, 0);
-@define-color warning_bg_color rgb (250, 173, 61);
-@define-color question_fg_color rgb (255, 255, 255);
-@define-color question_bg_color rgb (85, 136, 238);
-@define-color error_fg_color rgb (255, 255, 255);
-@define-color error_bg_color rgb (237, 54, 54);
+@define-color info_fg_color rgb (0, 153, 204);
+@define-color info_bg_color rgb (204, 234, 244);
+@define-color warning_fg_color rgb (255, 136, 0);
+@define-color warning_bg_color rgb (255, 231, 204);
+@define-color question_fg_color rgb (85, 136, 238);
+@define-color question_bg_color rgb (221, 231, 251);
+@define-color error_fg_color rgb (204, 0, 0);
+@define-color error_bg_color rgb (244, 204, 204);
 @define-color link_color #58e;
 @define-color success_color #4e9a06;
+@define-color warning_color #f57900;
 @define-color error_color #cc0000;
 
 /* widget colors */
