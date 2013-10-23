@@ -1,12 +1,12 @@
 /* default color scheme */
-@define-color bg_color #dedede;
-@define-color fg_color #555555;
-@define-color base_color #f9f9f9;
-@define-color text_color #333333;
+@define-color bg_color #333333;
+@define-color fg_color #f9f9f9;
+@define-color base_color #2d2d2d;
+@define-color text_color #ffffff;
 @define-color selected_bg_color #427fed;
 @define-color selected_fg_color #ffffff;
-@define-color tooltip_bg_color #dedede;
-@define-color tooltip_fg_color #555555;
+@define-color tooltip_bg_color #555555;
+@define-color tooltip_fg_color #f9f9f9;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
@@ -64,7 +64,7 @@
 @define-color wm_border_unfocused shade(@theme_bg_color, 0.8);
 
 @import url("gtk-widgets.css");
-@import url("gtk-widgets-assets.css");
+@import url("gtk-widgets-assets-dark.css");
 @import url("apps/gnome-applications.css");
 @import url("apps/unity.css");
 @import url("apps/xfce.css");
