@@ -3,9 +3,10 @@ UnityPanelWidget,
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: shade(@panel_bg_color, 0.8);
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@panel_bg_color, 1.1)),
-                                     to (shade(@panel_bg_color, 0.9)));
+    background-image: linear-gradient(to bottom,
+                                      shade(@panel_bg_color, 1.1),
+                                      shade(@panel_bg_color, 0.9)
+                                      );
 
     color: @panel_fg_color;
 }
@@ -22,10 +23,11 @@ UnityPanelWidget,
 
 .unity-panel.menubar.menuitem:hover,
 .unity-panel.menubar .menuitem *:hover {
-    border-color: shade(@panel_bg_color, 0.7);
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@panel_bg_color, 0.97)),
-                                     to (shade(@panel_bg_color, 0.82)));
+    border-color: shade(@panel_bg_color, 0.8);
+    background-image: linear-gradient(to bottom,
+                                      shade(shade(@panel_bg_color, 1.02), 0.9),
+                                      shade(shade(@panel_bg_color, 1.02), 0.95)
+                                      );
 
     color: @panel_fg_color;
 }

@@ -84,26 +84,14 @@
 
 <!-- ::: TITLES ::: -->
 <draw_ops name="title_focused">
-	<title version="< 3.1"
-               x="(0 `max` ((width - title_width) / 2)) + 2"
+	<title x="(0 `max` ((width - title_width) / 2)) + 2"
                y="(0 `max` ((height - title_height) / 2))"
-               color="C_title_focused" />
-	<title version=">= 3.1"
-               x="(0 `max` ((frame_x_center - title_width/2) `min` (width - title_width))) + 2"
-               y="(0 `max` ((height - title_height) / 2))"
-               ellipsize_width="width"
                color="C_title_focused" />
 </draw_ops>
 
 <draw_ops name="title_unfocused">
-	<title version="< 3.1"
-               x="(0 `max` ((width - title_width) / 2)) + 2"
+	<title x="(0 `max` ((width - title_width) / 2)) + 2"
                y="(0 `max` ((height - title_height) / 2))"
-               color="C_title_unfocused" />
-	<title version=">= 3.1"
-               x="(0 `max` ((frame_x_center - title_width/2) `min` (width - title_width))) + 2"
-               y="(0 `max` ((height - title_height) / 2))"
-               ellipsize_width="width"
                color="C_title_unfocused" />
 </draw_ops>
 
@@ -1078,14 +1066,6 @@
 	<frame focus="no" state="shaded" style="normal_unfocused" />
 	<frame focus="yes" state="maximized_and_shaded" style="normal_max_shaded_focused" />
 	<frame focus="no" state="maximized_and_shaded" style="normal_max_shaded_unfocused" />
-	<frame version=">= 3.3" focus="yes" state="tiled_left" style="tiled_left_focused" />
-	<frame version=">= 3.3" focus="no" state="tiled_left" style="tiled_left_unfocused" />
-	<frame version=">= 3.3" focus="yes" state="tiled_right" style="tiled_right_focused" />
-	<frame version=">= 3.3" focus="no" state="tiled_right" style="tiled_right_unfocused" />
-	<frame version=">= 3.3" focus="yes" state="tiled_left_and_shaded" style="tiled_left_focused" />
-	<frame version=">= 3.3" focus="no" state="tiled_left_and_shaded" style="tiled_left_unfocused" />
-	<frame version=">= 3.3" focus="yes" state="tiled_right_and_shaded" style="tiled_right_focused" />
-	<frame version=">= 3.3" focus="no" state="tiled_right_and_shaded" style="tiled_right_unfocused" />
 </frame_style_set>
 
 <frame_style_set name="dialog_style_set">
@@ -1132,17 +1112,6 @@
 	<frame focus="no" state="maximized_and_shaded" style="blank" />
 </frame_style_set>
 
-<frame_style_set name="attached_style_set">
-	<frame focus="yes" state="normal" resize="both" style="attached_focused" />
-	<frame focus="no" state="normal" resize="both" style="attached_unfocused" />
-	<frame focus="yes" state="maximized" style="blank" />
-	<frame focus="no" state="maximized" style="blank" />
-	<frame focus="yes" state="shaded" style="blank" />
-	<frame focus="no" state="shaded" style="blank" />
-	<frame focus="yes" state="maximized_and_shaded" style="blank" />
-	<frame focus="no" state="maximized_and_shaded" style="blank" />
-</frame_style_set>
-
 <!-- ::: WINDOWS ::: -->
 <window type="normal" style_set="normal_style_set" />
 <window type="dialog" style_set="dialog_style_set" />
@@ -1150,6 +1119,5 @@
 <window type="menu" style_set="utility_style_set" />
 <window type="utility" style_set="utility_style_set" />
 <window type="border" style_set="border_style_set" />
-<window version=">= 3.2" type="attached" style_set="attached_style_set" />
 
 </metacity_theme>

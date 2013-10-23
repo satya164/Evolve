@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#ffffff\nbg_color:#cccccc\nselected_bg_color:#5588ee\ntext_color:#111111\nfg_color:#333333\nselected_fg_color:#ffffff\nlink_color:#5588ee\ntoolbar_bg_color:#cccccc\ntoolbar_fg_color:#333333\nmenubar_bg_color:#cccccc\nmenubar_fg_color:#333333\nmenu_bg_color:#cccccc\nmenu_fg_color:#333333"
+gtk_color_scheme = "base_color:#f9f9f9\nbg_color:#dedede\nselected_bg_color:#427fed\ntext_color:#333333\nfg_color:#555555\nselected_fg_color:#ffffff\nlink_color:#538ffe\ntoolbar_bg_color:#dedede\ntoolbar_fg_color:#555555\nmenubar_bg_color:#dedede\nmenubar_fg_color:#555555\nmenu_bg_color:#f9f9f9\nmenu_fg_color:#333333"
 
 # Default Style
 
@@ -32,7 +32,6 @@ style "evolve-default" {
 
 	GtkMenuBar::internal-padding = 0
 	GtkMenuBar::window-dragging = 1
-	GtkMenuBar::shadow-type = GTK_SHADOW_NONE
 
 	GtkMenuItem::arrow-scaling= 0.5
 
@@ -68,7 +67,7 @@ style "evolve-default" {
 	GtkTreeView::expander-size = 11
 	GtkTreeView::vertical-separator = 0
 
-	GtkWidget::focus-padding = 2
+	GtkWidget::focus-padding = 0
 	GtkWidget::new-tooltip-style = 0
 
 	GtkWidget::wide-separators = 1
@@ -116,7 +115,7 @@ style "evolve-default" {
 		focusstyle = 3 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
 		glowstyle = 1
-		gradient_shades = { 1.2, 1.1, 1.1, 0.97 }
+		gradient_shades = { 1.10, 1.03, 1.02, 0.95 }
 		highlight_shade = 1.0
 		lightborder_shade = 1.0
 		lightborderstyle = 0 # 0 = lightborder on top side, 1 = lightborder on all sides
@@ -128,7 +127,7 @@ style "evolve-default" {
 		menustyle = 0 # 0 = none, 1 = vertical striped
 		progressbarstyle = 0 # 0 = none, 1 = diagonal striped, 2 = vertical striped
 		reliefstyle = 0 # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
-		roundness = 2
+		roundness = 3
 		scrollbarstyle = 0 # 0 = none, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle = 0	# 0 = none, 1 = handles
 		stepperstyle = 0 # 0 = standard, 1 = integrated stepper handles
@@ -162,7 +161,7 @@ style "evolve-notebook" = "evolve-notebook-bg" {
 	ythickness = 2
 
 	engine "murrine" {
-		roundness = 2
+		roundness = 0
 	}
 }
 
@@ -174,7 +173,7 @@ style "evolve-button" = "evolve-wider" {
 	bg[ACTIVE] = shade (0.82, @bg_color)
 
   	engine "murrine" {
-		roundness = 2
+		roundness = 3
 		glazestyle = 0
 		highlight_shade = 1.0
 	}
@@ -191,7 +190,7 @@ style "evolve-scrollbar" = "evolve-button" {
 		gradient_shades = { 0.7, 0.7, 0.7, 0.7 }
 		trough_shades = { 1.0, 1.0 }
 		trough_border_shades = { 1.2, 1.2 }
-    		lightborder_shade = 1.0
+    	lightborder_shade = 1.0
 		lightborderstyle = 0
 	}
 }
@@ -227,9 +226,9 @@ style "evolve-progressbar" = "evolve-default" {
 	fg[PRELIGHT] = shade (0.9, @selected_fg_color)
 
 	engine "murrine" {
-		roundness = 2
+		roundness = 3
 		border_shades = { 1.2, 1.2 }
-		gradient_shades = { 1.1, 1.0, 1.0, 0.9 }
+		gradient_shades = { 1.10, 1.03, 1.02, 0.95 }
 		trough_border_shades = { 0.9, 0.9 }
 	}
 }
@@ -394,7 +393,7 @@ style "evolve-toolbar" = "evolve-default" {
 	fg[INSENSITIVE] = mix (0.5, @toolbar_bg_color, @toolbar_fg_color)
 
 	engine "murrine" {
-		gradient_shades = { 1.00, 0.95, 0.94, 0.90 }
+		gradient_shades = { 0.90, 0.93, 0.93, 0.95 }
 	}
 }
 
