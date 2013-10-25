@@ -217,8 +217,8 @@ GtkAssistant .sidebar {
     border-left-color: shade(@theme_bg_color, 0.76);
     border-bottom-color: shade(@theme_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@theme_bg_color, 1.02), 0.95),
-                                      shade(shade(@theme_bg_color, 1.02), 0.90)
+                                      shade(shade(@theme_bg_color, 1.02), 0.90),
+                                      shade(shade(@theme_bg_color, 1.02), 0.95)
                                       );
 }
 
@@ -262,8 +262,8 @@ GtkAssistant .sidebar {
     border-left-color: shade(@theme_bg_color, 0.86);
     border-bottom-color: shade(@theme_bg_color, 0.9);
     background-image: linear-gradient(to bottom,
-                                      shade(@theme_bg_color, 0.95),
-                                      shade(@theme_bg_color, 0.90)
+                                      shade(@theme_bg_color, 0.90),
+                                      shade(@theme_bg_color, 0.95)
                                       );
 }
 
@@ -368,11 +368,11 @@ column-header .button,
 column-header .button:active,
 column-header .button:focus,
 column-header .button:active:focus {
-    border-color: shade(@theme_bg_color, 0.9);
-    border-bottom-color: shade(@theme_bg_color, 0.8);
+    border-color: shade(@theme_base_color, 0.9);
+    border-bottom-color: shade(@theme_base_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@theme_bg_color, 1.02), 1.10),
-                                      shade(shade(@theme_bg_color, 1.02), 0.95)
+                                      shade(@theme_base_color, 0.97),
+                                      @theme_base_color
                                       );
 }
 
@@ -380,8 +380,8 @@ column-header .button:hover,
 column-header .button:active:hover,
 column-header .button:hover:focus,
 column-header .button:active:hover:focus {
-    border-color: shade(@theme_bg_color, 0.9);
-    border-bottom-color: shade(@theme_bg_color, 0.7);
+    border-color: shade(@theme_base_color, 0.9);
+    border-bottom-color: shade(@theme_base_color, 0.7);
 }
 
 column-header:last-child .button {
@@ -1693,8 +1693,8 @@ GtkComboBox .separator {
     border-left-color: shade(@theme_bg_color, 0.76);
     border-bottom-color: shade(@theme_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@theme_bg_color, 1.02), 0.95),
-                                      shade(shade(@theme_bg_color, 1.02), 0.90)
+                                      shade(shade(@theme_bg_color, 1.02), 0.90),
+                                      shade(shade(@theme_bg_color, 1.02), 0.95)
                                       );
 }
 
@@ -2183,8 +2183,8 @@ GtkColorButton.button {
     border-left-color: shade(@toolbar_bg_color, 0.76);
     border-bottom-color: shade(@toolbar_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@toolbar_bg_color, 1.02), 0.95),
-                                      shade(shade(@toolbar_bg_color, 1.02), 0.90)
+                                      shade(shade(@toolbar_bg_color, 1.02), 0.90),
+                                      shade(shade(@toolbar_bg_color, 1.02), 0.95)
                                       );
 }
 
@@ -2230,8 +2230,8 @@ GtkColorButton.button {
     border-left-color: shade(@toolbar_bg_color, 0.86);
     border-bottom-color: shade(@toolbar_bg_color, 0.9);
     background-image: linear-gradient(to bottom,
-                                      shade(@toolbar_bg_color, 0.95),
-                                      shade(@toolbar_bg_color, 0.90)
+                                      shade(@toolbar_bg_color, 0.90),
+                                      shade(@toolbar_bg_color, 0.95)
                                       );
 }
 
@@ -2300,8 +2300,8 @@ GtkColorButton.button {
 .inline-toolbar.toolbar .button:active {
     border-color: shade(@theme_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@theme_bg_color, 1.02), 0.95),
-                                      shade(shade(@theme_bg_color, 1.02), 0.90)
+                                      shade(shade(@theme_bg_color, 1.02), 0.90),
+                                      shade(shade(@theme_bg_color, 1.02), 0.95)
                                       );
 }
 
