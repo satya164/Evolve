@@ -1,11 +1,10 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
 Name=Evolve
-Comment=A simple and minimal light theme for Gnome
+Comment=A simple and minimal light theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=Evolve
 MetacityTheme=Evolve
-CursorTheme=Adwaita
 ButtonLayout=close,minimize,maximize:
