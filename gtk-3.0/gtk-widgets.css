@@ -1106,10 +1106,6 @@ GtkModelMenuItem GtkBox GtkImage {
                                       );
 }
 
-.notebook tab GtkLabel {
-    color: @theme_text_color;
-}
-
 .notebook tab.top {
     border-width: 1px 1px 0 1px;
     border-bottom-right-radius: 0;
@@ -1147,7 +1143,7 @@ GtkModelMenuItem GtkBox GtkImage {
 }
 
 .notebook tab GtkLabel {
-    color: mix(@theme_text_color, @theme_base_color, 0.3);
+    color: @theme_text_color;
 }
 
 .notebook .active-page,
@@ -1184,7 +1180,7 @@ GtkModelMenuItem GtkBox GtkImage {
  * pane separator *
  ******************/
 .pane-separator {
-    background-color: shade(@theme_bg_color, 1.08);
+    background-color: @theme_bg_color;
     color: transparent;
 }
 

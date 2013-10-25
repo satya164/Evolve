@@ -6,8 +6,8 @@ PanelApplet,
 PanelToplevel {
     padding: 0;
     background-image: linear-gradient(to bottom,
-                                      shade(@panel_bg_color, 1.1),
-                                      shade(@panel_bg_color, 0.9)
+                                      shade(@panel_bg_color, 1.10),
+                                      shade(@panel_bg_color, 0.95)
                                       );
 
     color: @panel_fg_color;
@@ -20,8 +20,8 @@ PanelApplet {
 PanelSeparator {
     border-width: 0;
     background-image: linear-gradient(to bottom,
-                                      shade(@panel_bg_color, 1.1),
-                                      shade(@panel_bg_color, 0.9)
+                                      shade(@panel_bg_color, 1.10),
+                                      shade(@panel_bg_color, 0.95)
                                       );
 
     color: @panel_fg_color;
@@ -36,8 +36,8 @@ PanelMenuBar.menubar.menuitem {
 
     border-width: 0;
     background-image: linear-gradient(to bottom,
-                                      shade(@panel_bg_color, 1.1),
-                                      shade(@panel_bg_color, 0.9)
+                                      shade(@panel_bg_color, 1.10),
+                                      shade(@panel_bg_color, 0.95)
                                       );
 }
 
@@ -45,8 +45,8 @@ PanelAppletFrame {
     border-width: 0;
     background-color: @panel_bg_color;
     background-image: linear-gradient(to bottom,
-                                      shade(@panel_bg_color, 1.1),
-                                      shade(@panel_bg_color, 0.9)
+                                      shade(@panel_bg_color, 1.10),
+                                      shade(@panel_bg_color, 0.95)
                                       );
 }
 
@@ -57,36 +57,34 @@ PanelApplet .button {
     border-radius: 0;
     border-color: transparent;
     background-image: linear-gradient(to bottom,
-                                      shade(@panel_bg_color, 1.1),
-                                      shade(@panel_bg_color, 0.9)
+                                      shade(@panel_bg_color, 1.05),
+                                      shade(@panel_bg_color, 0.90)
                                       );
 
     color: @panel_fg_color;
 }
 
 PanelApplet .button:active {
-    border-width: 0 1px;
-    border-radius: 0;
     border-color: shade(@panel_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@panel_bg_color, 1.02), 0.9),
-                                      shade(shade(@panel_bg_color, 1.02), 0.95)
+                                      shade(shade(@panel_bg_color, 1.02), 0.95),
+                                      shade(shade(@panel_bg_color, 1.02), 0.90)
                                       );
 }
 
 PanelApplet .button:prelight {
     border-color: transparent;
     background-image: linear-gradient(to bottom,
-                                      shade(@panel_bg_color, 1.2),
-                                      shade(@panel_bg_color, 1.0)
+                                      shade(@panel_bg_color, 1.10),
+                                      shade(@panel_bg_color, 0.95)
                                       );
 }
 
 PanelApplet .button:active:prelight {
     border-color: shade(@panel_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@panel_bg_color, 1.02), 1.0),
-                                      shade(shade(@panel_bg_color, 1.02), 1.05)
+                                      shade(shade(@panel_bg_color, 1.02), 1.10),
+                                      shade(shade(@panel_bg_color, 1.02), 0.95)
                                       );
 }
 
@@ -205,7 +203,7 @@ GeditWindow .pane-separator:hover {
     border-width: 0 1px 1px 1px;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.8);
-    background-color: shade(@theme_bg_color, 1.02);
+    background-color: shade(@theme_bg_color, 1.08);
     color: shade(@theme_bg_color, 0.8);
 }
 
