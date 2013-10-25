@@ -654,7 +654,7 @@ GtkInfoBar {
     border-style: solid;
     border-color: shade(@info_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(@info_bg_color, 1.05),
+                                      shade(@info_bg_color, 1.00),
                                       shade(@info_bg_color, 0.95)
                                       );
 
@@ -684,7 +684,7 @@ GtkInfoBar {
     border-style: solid;
     border-color: shade(@warning_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(@warning_bg_color, 1.05),
+                                      shade(@warning_bg_color, 1.00),
                                       shade(@warning_bg_color, 0.95)
                                       );
 
@@ -714,7 +714,7 @@ GtkInfoBar {
     border-style: solid;
     border-color: shade(@question_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(@question_bg_color, 1.05),
+                                      shade(@question_bg_color, 1.00),
                                       shade(@question_bg_color, 0.95)
                                       );
 
@@ -744,7 +744,7 @@ GtkInfoBar {
     border-style: solid;
     border-color: shade(@error_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
-                                      shade(@error_bg_color, 1.05),
+                                      shade(@error_bg_color, 1.00),
                                       shade(@error_bg_color, 0.95)
                                       );
 
