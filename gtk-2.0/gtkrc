@@ -4,7 +4,7 @@ gtk_color_scheme = "base_color:#f9f9f9\nbg_color:#dedede\nselected_bg_color:#427
 
 # Default Style
 
-style "evolve-default" {
+style "murrine-default" {
 	xthickness = 1
 	ythickness = 1
 
@@ -41,8 +41,8 @@ style "evolve-default" {
 	GtkProgressBar::min-vertical-bar-width = 10
 
 	GtkRange::trough-border = 0
-	GtkRange::slider-width = 15
-	GtkRange::stepper-size = 15
+	GtkRange::slider-width = 13
+	GtkRange::stepper-size = 13
 	GtkRange::stepper_spacing = 0
 	GtkRange::trough-under-steppers = 1
 
@@ -68,7 +68,6 @@ style "evolve-default" {
 	GtkTreeView::vertical-separator = 0
 
 	GtkWidget::focus-padding = 0
-	GtkWidget::new-tooltip-style = 0
 
 	GtkWidget::wide-separators = 1
 	GtkWidget::separator-width = 1
@@ -109,13 +108,14 @@ style "evolve-default" {
 	engine "murrine" {
 		animation = FALSE
 		arrowstyle = 1 # 0 = normal arrows, 1 = filled arrows
+		border_shades = { 0.8, 0.8 }
 		colorize_scrollbar = FALSE		
 		comboboxstyle = 0 # 0 = normal combobox, 1 = colorized combobox below arrow
 		contrast = 1.0
-		focusstyle = 3 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
+		focusstyle = 1 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
 		glowstyle = 1
-		gradient_shades = { 1.10, 1.03, 1.02, 0.95 }
+		gradient_shades = { 1.10, 1.02, 1.02, 0.95 }
 		highlight_shade = 1.0
 		lightborder_shade = 1.0
 		lightborderstyle = 0 # 0 = lightborder on top side, 1 = lightborder on all sides
@@ -135,28 +135,33 @@ style "evolve-default" {
    }
 }
 
-style "evolve-wide" {
+style "murrine-wide" {
 	xthickness = 2
 	ythickness = 2
 }
 
-style "evolve-wider" {
+style "murrine-wider" {
 	xthickness = 3
 	ythickness = 3
 }
 
+style "murrine-thin" {
+	xthickness = 0
+	ythickness = 0
+}
+
 # Notebook
 
-style "evolve-notebook-bg" {
-	bg[NORMAL] = shade (1.1, @bg_color)
-	bg[ACTIVE] = shade (0.9, @bg_color)
+style "murrine-notebook-bg" {
+	bg[NORMAL] = @base_color
+	bg[ACTIVE] = @base_color
 
 	engine "murrine" {
-		border_shades = { 0.9, 0.9 }
+		border_shades = { 0.7, 0.7 }
 	}
 }
 
-style "evolve-notebook" = "evolve-notebook-bg" {
+style "murrine-notebook" = "murrine-notebook-bg" {
 	xthickness = 2
 	ythickness = 2
 
@@ -167,46 +172,44 @@ style "evolve-notebook" = "evolve-notebook-bg" {
 
 # Various Standard Widgets
 
-style "evolve-button" = "evolve-wider" {
-	bg[NORMAL] = @bg_color
-	bg[PRELIGHT] = shade (1.1, @bg_color)
-	bg[ACTIVE] = shade (0.82, @bg_color)
+style "murrine-button" = "murrine-wider" {
+	bg[NORMAL] = shade (1.02, @bg_color)
+	bg[PRELIGHT] = shade (1.05, @bg_color)
+	bg[ACTIVE] = shade (0.95, @bg_color)
 
   	engine "murrine" {
-		roundness = 3
-		glazestyle = 0
-		highlight_shade = 1.0
+		border_shades = { 1.05, 1.02 }
 	}
 }
 
-style "evolve-scrollbar" = "evolve-button" {
+style "murrine-scrollbar" = "murrine-button" {
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (0.8, @bg_color)
 	bg[ACTIVE] = shade (1.4, @selected_bg_color)
 	
 	engine "murrine" {
-		roundness = 4
+		roundness = 7
 		border_shades = { 1.4, 1.4 }
 		gradient_shades = { 0.7, 0.7, 0.7, 0.7 }
 		trough_shades = { 1.0, 1.0 }
 		trough_border_shades = { 1.2, 1.2 }
-    	lightborder_shade = 1.0
+		lightborder_shade = 1.0
 		lightborderstyle = 0
 	}
 }
 
-style "evolve-overlay-scrollbar" {
-	bg[ACTIVE] = shade (0.8, @bg_color)
-	bg[INSENSITIVE] = shade (0.97, @bg_color)
-	base[SELECTED]      = shade (0.6, @base_color)
+style "murrine-overlay-scrollbar" {
+	bg[ACTIVE] = shade (0.7, @bg_color)
+	bg[INSENSITIVE] = shade (0.95, @bg_color)
+	base[SELECTED]	  = shade (0.6, @base_color)
 	base[INSENSITIVE]   = shade (0.85, @base_color)
 }
 
-style "evolve-scale" = "evolve-default" {
+style "murrine-scale" = "murrine-thin" {
 	bg[NORMAL] = @bg_color
 	bg[ACTIVE] = @bg_color
-	bg[SELECTED]	= shade (1.0, @selected_bg_color)  
-	bg[INSENSITIVE]	= shade (0.95, @bg_color)
+	bg[SELECTED] = @selected_bg_color
+	bg[INSENSITIVE] = shade (0.95, @bg_color)
 	
 	engine "murrine" {
 		roundness = 7
@@ -216,161 +219,151 @@ style "evolve-scale" = "evolve-default" {
 	}
 }
 
-style "evolve-progressbar" = "evolve-default" {
-	xthickness = 0
-	ythickness = 0
-
+style "murrine-progressbar" = "murrine-thin" {
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (1.04, @bg_color)
 	bg[ACTIVE] = shade (1.14, @bg_color)
 	fg[PRELIGHT] = shade (0.9, @selected_fg_color)
 
 	engine "murrine" {
-		roundness = 3
 		border_shades = { 1.2, 1.2 }
-		gradient_shades = { 1.10, 1.03, 1.02, 0.95 }
 		trough_border_shades = { 0.9, 0.9 }
 	}
 }
 
-style "evolve-treeview-header" = "evolve-button" {
+style "murrine-treeview-header" {
 	xthickness = 2
 	ythickness = 1
 
+	bg[NORMAL] = @base_color
+	bg[PRELIGHT] = shade (1.05, @base_color)
+	bg[ACTIVE] = shade (0.95, @base_color)
+	fg[NORMAL] = @text_color
+	fg[PRELIGHT] = @text_color
+	fg[ACTIVE] = @text_color
+	
+  	engine "murrine" {
+		roundness = 0
+		gradient_shades = { 0.97, 0.99, 0.99, 1.00 }
+	}
+}
+
+style "murrine-treeview" {
   	engine "murrine" {
 		roundness = 0
 	}
 }
 
-style "evolve-treeview" {
-  	engine "murrine" {
-		roundness = 0
-	}
-}
-
-style "evolve-frame-title" {
+style "murrine-frame-title" {
 	fg[NORMAL] = lighter (@fg_color)
 }
 
-style "evolve-tooltips" = "evolve-wider" {
+style "murrine-tooltips" = "murrine-wider" {
 	xthickness = 5
 	ythickness = 5
 
 	bg[NORMAL] = @bg_color
 	fg[NORMAL] = @fg_color
 	bg[SELECTED] = @bg_color
+	fg[SELECTED] = @fg_color
 
 	engine "murrine" {
+		border_shades = { 1.2, 1.2 }
 		textstyle = 0
-		roundness = 2
-		rgba = FALSE
 	}
 }
 
-style "evolve-spinbutton" = "evolve-button" {
-	xthickness = 4
-
+style "murrine-spinbutton" = "murrine-button" {
 	engine "murrine" {
 	}
 }
 
-style "evolve-radiocheck" = "evolve-default" {
+style "murrine-radiocheck" = "murrine-default" {
 	text[NORMAL] = shade (0.8, @selected_bg_color)
 	text[PRELIGHT] = shade (0.8, @selected_bg_color)
 	bg[SELECTED] = @base_color
 }
 
-style "evolve-entry" = "evolve-wider" {
+style "murrine-entry" = "murrine-wider" {
 	bg[SELECTED] = mix (0.5, @selected_bg_color, @base_color)
 
 	engine "murrine" {
-		border_shades = { 1.2, 1.2 }
+		border_shades = { 1.4, 1.2 }
 	}
 }
 
-style "metacity-frame" = "evolve-default" {
+style "metacity-frame" = "murrine-default" {
 	bg[SELECTED] = @selected_bg_color
 }
 
-style "evolve-statusbar" { }
-style "evolve-comboboxentry" = "evolve-entry" { }
-style "evolve-hscale" = "evolve-scale" { }
-style "evolve-vscale" = "evolve-scale" { }
-style "evolve-hscrollbar" = "evolve-scrollbar" { }
-style "evolve-vscrollbar" = "evolve-scrollbar" { }
+style "murrine-statusbar" { }
+style "murrine-comboboxentry" = "murrine-entry" { }
+style "murrine-hscale" = "murrine-scale" { }
+style "murrine-vscale" = "murrine-scale" { }
+style "murrine-hscrollbar" = "murrine-scrollbar" { }
+style "murrine-vscrollbar" = "murrine-scrollbar" { }
 
 # Menus
 
-style "evolve-menu" {
-	ythickness = 0
-	xthickness = 0
-	
+style "murrine-menu" {	
 	bg[SELECTED] = @selected_bg_color
-	bg[NORMAL] = shade (1.40, @menu_bg_color)
+	bg[NORMAL] = @menu_bg_color
 	bg[PRELIGHT] = @selected_bg_color
-	bg[ACTIVE] = shade (1.40, @menu_bg_color)
-	bg[INSENSITIVE] = shade (1.40, @menu_bg_color)
+	bg[ACTIVE] = @menu_bg_color
+	bg[INSENSITIVE] = @menu_bg_color
 	fg[NORMAL] = @menu_fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.85, shade (0.75, @menu_bg_color), @menu_fg_color)
+	fg[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
 
 	text[NORMAL] = @text_color
 	text[PRELIGHT] = @selected_fg_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
-	text[INSENSITIVE] = mix (0.85, shade (0.75, @menu_bg_color), @menu_fg_color)
+	text[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
 
 	engine "murrine" {
 		roundness = 0
 	}
 }
 
-style "evolve-menu-item" = "evolve-wider" {
-	bg[SELECTED]	= @selected_bg_color
-	bg[PRELIGHT]	= @selected_bg_color
-	fg[NORMAL]	= @menu_fg_color # Fix for XFCE menu text
-	fg[PRELIGHT]	= @selected_fg_color
-	fg[SELECTED]	= @selected_fg_color
+style "murrine-menu-item" = "murrine-wider" {
+	bg[SELECTED] = @selected_bg_color
+	bg[PRELIGHT] = @selected_bg_color
+	fg[NORMAL] = @menu_fg_color # Fix for XFCE menu text
+	fg[PRELIGHT] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
 
 	engine "murrine" {
 		textstyle = 0
-		border_shades = { 1.4, 1.4 }
+		border_shades = { 1.2, 1.2 }
 	}
 }
 
-style "evolve-separator-menu-item" {
-	xthickness = 1
-	ythickness = 1
-
+style "murrine-separator-menu-item" {
 	GtkSeparatorMenuItem::horizontal-padding = 0
 }
 
-style "evolve-menubar" = "evolve-default" {
-	ythickness = 0
-
+style "murrine-menubar" = "murrine-thin" {
 	bg[SELECTED] = @selected_bg_color
 	bg[NORMAL] = @menubar_bg_color
 	bg[PRELIGHT] = @selected_bg_color
-	bg[ACTIVE] = shade (1.40, @menubar_bg_color)
-	bg[INSENSITIVE] = shade (1.40, @menubar_bg_color)
+	bg[ACTIVE] = @menubar_bg_color
+	bg[INSENSITIVE] = @menubar_bg_color
 
 	fg[NORMAL] = @menubar_fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.85, shade (0.75, @menubar_bg_color), @menubar_fg_color)
+	fg[INSENSITIVE] = mix (0.5, @menubar_bg_color, @menubar_fg_color)
 
 	engine "murrine" {
 		roundness = 0
 	}
 }
 
-style "evolve-menubaritem" {
-	xthickness = 3
-	ythickness = 3
-
+style "murrine-menubaritem" = "murrine-wide" {
 	engine "murrine" {
 		roundness = 0
 	}
@@ -378,8 +371,7 @@ style "evolve-menubaritem" {
 
 # Toolbars
 
-style "evolve-toolbar" = "evolve-default" {
-
+style "murrine-toolbar" = "murrine-default" {
 	bg[NORMAL] = @toolbar_bg_color
 	bg[PRELIGHT] = shade (1.02, @toolbar_bg_color)
 	bg[SELECTED] = @selected_bg_color
@@ -397,8 +389,7 @@ style "evolve-toolbar" = "evolve-default" {
 	}
 }
 
-style "evolve-toolbutton" = "evolve-button" {
-
+style "murrine-toolbutton" = "murrine-button" {
 	bg[NORMAL] = @toolbar_bg_color
 	bg[PRELIGHT] = shade (1.02, @toolbar_bg_color)
 	bg[SELECTED] = @selected_bg_color
@@ -410,24 +401,21 @@ style "evolve-toolbutton" = "evolve-button" {
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @toolbar_fg_color
 	fg[INSENSITIVE] = mix (0.5, @toolbar_bg_color, @toolbar_fg_color)
-
-	engine "murrine" {
-	}
 }
 
-class "GtkToolbar" style "evolve-toolbar"
-class "GtkHandleBox" style "evolve-toolbar"
+class "GtkToolbar" style "murrine-toolbar"
+class "GtkHandleBox" style "murrine-toolbar"
 
 # Panels
 
-style "evolve-panel" {
+style "murrine-panel" {
 	xthickness = 1
 	ythickness = 0
 
 	bg[NORMAL] = @bg_color
-	bg[PRELIGHT] = shade (1.1, @bg_color)
-	bg[ACTIVE] = shade (0.9, @bg_color)
-	bg[SELECTED] = shade (0.97, @bg_color)
+	bg[PRELIGHT] = shade (1.10, @bg_color)
+	bg[ACTIVE] = shade (0.90, @bg_color)
+	bg[SELECTED] = shade (0.95, @bg_color)
 
 	fg[NORMAL] = @fg_color
 	fg[PRELIGHT] = @fg_color
@@ -444,22 +432,22 @@ style "evolve-panel" {
 	}
 }
 
-widget "*PanelWidget*" style "evolve-panel"
-widget "*PanelApplet*" style "evolve-panel"
-widget "*fast-user-switch*" style "evolve-panel"
-widget "*CPUFreq*Applet*" style "evolve-panel"
-widget "*indicator-applet*" style "evolve-panel"
-class "PanelApp*" style "evolve-panel"
-class "PanelToplevel*" style "evolve-panel"
-widget_class "*PanelToplevel*" style "evolve-panel"
-widget_class "*notif*" style "evolve-panel"
-widget_class "*Notif*" style "evolve-panel"
-widget_class "*Tray*" style "evolve-panel" 
-widget_class "*tray*" style "evolve-panel"
-widget_class "*computertemp*" style "evolve-panel"
-widget_class "*Applet*Tomboy*" style "evolve-panel"
-widget_class "*Applet*Netstatus*" style "evolve-panel"
-widget "*gdm-user-switch-menubar*" style "evolve-panel"
+widget "*PanelWidget*" style "murrine-panel"
+widget "*PanelApplet*" style "murrine-panel"
+widget "*fast-user-switch*" style "murrine-panel"
+widget "*CPUFreq*Applet*" style "murrine-panel"
+widget "*indicator-applet*" style "murrine-panel"
+class "PanelApp*" style "murrine-panel"
+class "PanelToplevel*" style "murrine-panel"
+widget_class "*PanelToplevel*" style "murrine-panel"
+widget_class "*notif*" style "murrine-panel"
+widget_class "*Notif*" style "murrine-panel"
+widget_class "*Tray*" style "murrine-panel" 
+widget_class "*tray*" style "murrine-panel"
+widget_class "*computertemp*" style "murrine-panel"
+widget_class "*Applet*Tomboy*" style "murrine-panel"
+widget_class "*Applet*Netstatus*" style "murrine-panel"
+widget "*gdm-user-switch-menubar*" style "murrine-panel"
 
 style "bold-panel-item" {
 	font_name = "Bold"
@@ -472,14 +460,14 @@ style "bold-panel-item" {
 widget "*Panel*MenuBar*" style "bold-panel-item"
 widget "*gimmie*" style "bold-panel-item"
 
-# widget_class "*Mail*" style "evolve-panel" # Disabled to fix Evolution bug
-# class "*Panel*" style "evolve-panel" # Disabled to fix bug
+# widget_class "*Mail*" style "murrine-panel" # Disabled to fix Evolution bug
+# class "*Panel*" style "murrine-panel" # Disabled to fix bug
 
 # XFCE Styles
 
 style "xfce-header" {
-	bg[NORMAL]	 = shade (0.9, @bg_color)
-	base[NORMAL]	 = shade (1.18, @bg_color)
+	bg[NORMAL] = shade (0.90, @bg_color)
+	base[NORMAL] = shade (0.95, @base_color)
 }
 
 style "xfdesktop-windowlist" {
@@ -489,22 +477,23 @@ style "xfdesktop-windowlist" {
 }
 
 style "xfdesktop-icon-view" {
-    font_name = "normal"
-    XfdesktopIconView::label-alpha = 30
-    XfdesktopIconView::selected-label-alpha = 60
-    XfdesktopIconView::shadow-color = shade (1.05, @fg_color)
-    XfdesktopIconView::selected-shadow-color = @fg_color
-    XfdesktopIconView::shadow-x-offset = -1
-    XfdesktopIconView::selected-shadow-x-offset = -1
-    XfdesktopIconView::shadow-y-offset = -1
-    XfdesktopIconView::selected-shadow-y-offset = -1
-    fg[NORMAL] = @selected_fg_color
-    fg[ACTIVE] = @selected_fg_color
-    engine "murrine"
-    {
-	textstyle = 0
-	text_shade = 0.05
-    }
+	font_name = "normal"
+	XfdesktopIconView::label-alpha = 30
+	XfdesktopIconView::selected-label-alpha = 60
+	XfdesktopIconView::shadow-color = shade (1.05, @fg_color)
+	XfdesktopIconView::selected-shadow-color = @fg_color
+	XfdesktopIconView::shadow-x-offset = -1
+	XfdesktopIconView::selected-shadow-x-offset = -1
+	XfdesktopIconView::shadow-y-offset = -1
+	XfdesktopIconView::selected-shadow-y-offset = -1
+
+	fg[NORMAL] = @selected_fg_color
+	fg[ACTIVE] = @selected_fg_color
+
+	engine "murrine" {
+		textstyle = 0
+		text_shade = 0.05
+	}
 }
 
 style "xfwm-tabwin" {
@@ -517,30 +506,29 @@ style "xfwm-tabwin" {
 }
 
 style "xfsm-logout" {
-
 	engine "murrine" {
-        }	
+	}	
 }
 
 style "thunar-sidepane"
 {
-	base[NORMAL]		= shade (0.9,@base_color)
-	base[INSENSITIVE]	= shade (0.9,@base_color)
+	base[NORMAL] = shade (0.9,@base_color)
+	base[INSENSITIVE] = shade (0.9,@base_color)
 	
-	bg[NORMAL]		= shade (0.92,@base_color)
-	bg[PRELIGHT]		= shade (1.5,@selected_bg_color)
+	bg[NORMAL] = shade (0.92,@base_color)
+	bg[PRELIGHT] = shade (1.5,@selected_bg_color)
 }
 
-style "workspace-switcher" = "evolve-panel" {
-	bg[SELECTED]	= mix (0.3, shade (1.35,@selected_bg_color), shade (0.9,@base_color))
+style "workspace-switcher" = "murrine-panel" {
+	bg[SELECTED] = mix (0.3, shade (1.35,@selected_bg_color), shade (0.9,@base_color))
 }
 
 widget_class "*ThunarShortcutsView*"	style "thunar-sidepane"
 widget_class "*ThunarTreeView*"		style "thunar-sidepane"
 widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView*"	style "thunar-sidepane"
 
-widget "*Xfce*Panel*"		style "evolve-panel"
-class "*Xfce*Panel*"		style "evolve-panel"
+widget "*Xfce*Panel*"		style "murrine-panel"
+class "*Xfce*Panel*"		style "murrine-panel"
 widget "*WnckPager*"		style "workspace-switcher"
 
 widget_class "*XfceHeading*" style "xfce-header"
@@ -553,7 +541,6 @@ widget_class "*XfsmLogoutDialog*" style "xfsm-logout"
 
 style "chromium-toolbar-button" {
 	engine "murrine" {
-		roundness = 2
 		textstyle = 0
 	}
 }
@@ -582,64 +569,64 @@ widget_class "*Chrom*Button*" style "chromium-toolbar-button"
 
 # General Style Application
 
-class "GtkWidget" style "evolve-default"
+class "GtkWidget" style "murrine-default"
 
-class "GtkFrame" style "evolve-wide"
+class "GtkFrame" style "murrine-wide"
 class "MetaFrames" style "metacity-frame"
-class "GtkSeparator" style "evolve-wide"
+class "GtkSeparator" style "murrine-wide"
 class "GtkWindow" style "metacity-frame"
-class "GtkCalendar" style "evolve-wide"
+class "GtkCalendar" style "murrine-wide"
 
-class "GtkSpinButton" style "evolve-spinbutton"
-class "GtkScale" style "evolve-scale"
-class "GtkVScale" style "evolve-vscale"
-class "GtkHScale" style "evolve-hscale"
-class "GtkScrollbar" style "evolve-scrollbar"
-class "GtkVScrollbar" style "evolve-vscrollbar"
-class "GtkHScrollbar" style "evolve-hscrollbar"
+class "GtkSpinButton" style "murrine-spinbutton"
+class "GtkScale" style "murrine-scale"
+class "GtkVScale" style "murrine-vscale"
+class "GtkHScale" style "murrine-hscale"
+class "GtkScrollbar" style "murrine-scrollbar"
+class "GtkVScrollbar" style "murrine-vscrollbar"
+class "GtkHScrollbar" style "murrine-hscrollbar"
 
-class "GtkRadio*" style "evolve-radiocheck"
-class "GtkCheck*" style "evolve-radiocheck"
+class "GtkRadio*" style "murrine-radiocheck"
+class "GtkCheck*" style "murrine-radiocheck"
 
-class "GtkEntry" style "evolve-entry"
+class "GtkEntry" style "murrine-entry"
 
-widget_class "*<GtkNotebook>" style "evolve-notebook"
-widget_class "*<GtkNotebook>*<GtkEventBox>" style "evolve-notebook-bg"
-widget_class "*<GtkNotebook>*<GtkDrawingArea>" style "evolve-notebook-bg"
-widget_class "*<GtkNotebook>*<GtkLayout>" style "evolve-notebook-bg"
-widget_class "*.GtkNotebook.*.GtkViewport" style "evolve-notebook"
+widget_class "*<GtkNotebook>" style "murrine-notebook"
+widget_class "*<GtkNotebook>*<GtkEventBox>" style "murrine-notebook-bg"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>" style "murrine-notebook-bg"
+widget_class "*<GtkNotebook>*<GtkLayout>" style "murrine-notebook-bg"
+widget_class "*.GtkNotebook.*.GtkViewport" style "murrine-notebook"
 
-widget_class "*<GtkButton>" style "evolve-button"
-widget_class "*<GtkStatusbar>*" style "evolve-statusbar"
-widget_class "*<GtkProgress>" style "evolve-progressbar"
-widget_class "*<GtkProgressBar>" style "evolve-progressbar"
+widget_class "*<GtkButton>" style "murrine-button"
+widget_class "*<GtkStatusbar>*" style "murrine-statusbar"
+widget_class "*<GtkProgress>" style "murrine-progressbar"
+widget_class "*<GtkProgressBar>" style "murrine-progressbar"
 
-widget_class "*<GtkComboBoxEntry>*" style "evolve-comboboxentry"
-widget_class "*<GtkCombo>*" style "evolve-comboboxentry"
+widget_class "*<GtkComboBoxEntry>*" style "murrine-comboboxentry"
+widget_class "*<GtkCombo>*" style "murrine-comboboxentry"
 
-widget_class "*<GtkMenu>*" style "evolve-menu"
-widget_class "*<GtkMenuItem>*" style "evolve-menu-item"
-widget_class "*<GtkSeparatorMenuItem>*" style "evolve-separator-menu-item"
-widget_class "*Menu*.*Sepa*"  style "evolve-separator-menu-item"
-widget_class "*<GtkMenuBar>*" style "evolve-menubar"
-widget_class "*<GtkMenuBar>*<GtkMenuItem>*" style "evolve-menubaritem"
+widget_class "*<GtkMenu>*" style "murrine-menu"
+widget_class "*<GtkMenuItem>*" style "murrine-menu-item"
+widget_class "*<GtkSeparatorMenuItem>*" style "murrine-separator-menu-item"
+widget_class "*Menu*.*Sepa*"  style "murrine-separator-menu-item"
+widget_class "*<GtkMenuBar>*" style "murrine-menubar"
+widget_class "*<GtkMenuBar>*<GtkMenuItem>*" style "murrine-menubaritem"
 
-widget_class "*GtkToolButton*" style "evolve-toolbutton"
-widget_class "*GtkToggleToolButton*" style "evolve-toolbutton"
-widget_class "*GtkMenuToolButton*" style "evolve-toolbutton"
-widget_class "*GtkToolbar*Button" style "evolve-toolbutton"
+widget_class "*GtkToolButton*" style "murrine-toolbutton"
+widget_class "*GtkToggleToolButton*" style "murrine-toolbutton"
+widget_class "*GtkMenuToolButton*" style "murrine-toolbutton"
+widget_class "*GtkToolbar*Button" style "murrine-toolbutton"
 
-widget_class "*.<GtkFrame>.<GtkLabel>" style "evolve-frame-title"
+widget_class "*.<GtkFrame>.<GtkLabel>" style "murrine-frame-title"
 
-widget_class "*.<GtkTreeView>*" style "evolve-treeview"
-widget_class "*.<GtkTreeView>.<GtkButton>" style "evolve-treeview-header"
-widget_class "*.<GtkCTree>.<GtkButton>" style "evolve-treeview-header"
-widget_class "*.<GtkList>.<GtkButton>" style "evolve-treeview-header"
-widget_class "*.<GtkCList>.<GtkButton>" style "evolve-treeview-header"
+widget_class "*.<GtkTreeView>*" style "murrine-treeview"
+widget_class "*.<GtkTreeView>.<GtkButton>" style "murrine-treeview-header"
+widget_class "*.<GtkCTree>.<GtkButton>" style "murrine-treeview-header"
+widget_class "*.<GtkList>.<GtkButton>" style "murrine-treeview-header"
+widget_class "*.<GtkCList>.<GtkButton>" style "murrine-treeview-header"
 
-widget "gtk-tooltip*" style "evolve-tooltips"
+widget "gtk-tooltip*" style "murrine-tooltips"
 
-widget_class "*<GtkScrolledWindow>*<OsScrollbar>" style "evolve-overlay-scrollbar"
+widget_class "*<GtkScrolledWindow>*<OsScrollbar>" style "murrine-overlay-scrollbar"
 
 # Workarounds and Non-Standard Styling
 
@@ -665,18 +652,18 @@ widget_class "*<GtkListItem>*" style "fg-is-text-color-workaround"
 widget_class "*<GtkCList>" style "fg-is-text-color-workaround"
 widget_class "*<EelEditableLabel>" style "fg-is-text-color-workaround"
 
-style "evolve-evo-new-button-workaround" {
+style "murrine-evo-new-button-workaround" {
 	engine "murrine" {
 		toolbarstyle = 0
 	}
 }
 
-widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "evolve-evo-new-button-workaround"
+widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "murrine-evo-new-button-workaround"
 
 style "inkscape-toolbar-fix" {
 	engine "murrine" {
-                gradient_shades = { 1.0, 1.0, 1.0, 1.0 }
-                highlight_shade = 1.0
+		gradient_shades = { 1.0, 1.0, 1.0, 1.0 }
+		highlight_shade = 1.0
 	}
 }
 
