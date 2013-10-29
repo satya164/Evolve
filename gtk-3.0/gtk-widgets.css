@@ -796,9 +796,12 @@ GtkInfoBar {
     border-width: 1px;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.8);
-    border-radius: 2px;
-    background-color: @theme_bg_color;
-    background-image: none;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.10),
+                                      shade(@theme_bg_color, 0.95)
+                                      );
+                                      
     color: @theme_fg_color;
 }
 
@@ -1157,7 +1160,7 @@ GtkModelMenuItem GtkBox GtkImage {
 .notebook tab .button:hover {
     padding: 1px;
     border-width: 1px;
-    border-radius: 2px;
+    border-radius: 3px;
     border-style: solid;
     border-color: transparent;
     background-image: none;
@@ -1643,12 +1646,14 @@ GtkComboBox .separator {
 }
 
 .spinbutton .button:first-child {
-    border-radius: 2px 0 0 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     box-shadow: none;
 }
 
 .spinbutton .button:last-child {
-    border-radius: 0 2px 2px 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .spinbutton .button:dir(rtl) {
@@ -1970,14 +1975,14 @@ GtkColorSwatch.color-dark:selected:hover {
 
 GtkColorSwatch.left,
 GtkColorSwatch:first-child {
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 GtkColorSwatch.right,
 GtkColorSwatch:last-child {
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 GtkColorSwatch:only-child {
@@ -1985,13 +1990,13 @@ GtkColorSwatch:only-child {
 }
 
 GtkColorSwatch.top {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 GtkColorSwatch.bottom {
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 GtkColorChooserWidget #add-color-button {
@@ -2038,7 +2043,7 @@ GtkColorEditor GtkColorSwatch.color-light:hover {
 }
 
 GtkColorButton.button {
-    padding: 2px;
+    padding: 3px;
 }
 
 /**************
@@ -2886,7 +2891,7 @@ GtkViewport.frame {
     border-style: solid;
     border-color: shade(@theme_base_color, 0.8);
     border-width: 0 1px 1px 1px;
-    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 3px 3px;
     padding: 8px;
     background-color: @theme_base_color;
     background-image: none;
@@ -3017,14 +3022,14 @@ GtkOverlay.osd {
 }
 
 .osd.toolbar .button:first-child {
-    border-radius: 2px 0 0 2px;
+    border-radius: 3px 0 0 3px;
     border-width: 1px 0 1px 1px;
     box-shadow: inset -1px 0 shade(@osd_bg, 0.9);
 }
 
 .osd.toolbar .button:last-child {
     box-shadow: none;
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 3px 3px 0;
     border-width: 1px 1px 1px 0;
 }
 
