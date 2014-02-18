@@ -159,17 +159,9 @@
     border-style: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-image: linear-gradient(to bottom,
-                                      shade(@bg_color, 0.85),
-                                      shade(@bg_color, 0.98) 10%,
-                                      shade(@bg_color, 1.0) 99%,
-                                      shade(@bg_color, 1.0)
-                                      );
-
-    box-shadow: inset 1px 0 shade(@lightdm_bg_color, 0.6),
-                inset -1px 0 shade(@lightdm_bg_color, 0.6),
-                inset 0 1px shade(@lightdm_bg_color, 0.6),
-                inset 0 -1px shade(@lightdm_bg_color, 0.6);
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
 }
 
 /******************************
