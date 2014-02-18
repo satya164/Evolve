@@ -51,6 +51,10 @@
 @define-color osd_fg #eee;
 @define-color osd_bg alpha(@osd_base, 0.8);
 
+/* lightdm greeter colors */
+@define-color lightdm_bg_color @theme_base_color;
+@define-color lightdm_fg_color @theme_text_color;
+
 /* backdrop colors */
 @define-color backdrop_selected_bg_color shade (@theme_bg_color, 0.9);
 @define-color backdrop_selected_fg_color @theme_fg_color;
