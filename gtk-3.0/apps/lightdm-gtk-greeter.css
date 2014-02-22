@@ -2,24 +2,37 @@
  * panel *
  *********/
 #panel_window {
-    background-color: alpha (black, 0.5);
+    background-color: transparent;
+    background-image: none;
     color: white;
     font: bold;
     text-shadow: 0 1px alpha(black, 0.5);
     icon-shadow: 0 1px alpha(black, 0.5);
-    box-shadow: inset 0 -1px alpha (black, 0.5);
 }
 
 #panel_window .menubar,
 #panel_window .menubar > .menuitem {
     background-color: transparent;
+    background-image: none;
     color: white;
     font: bold;
     text-shadow: 0 1px alpha(black, 0.5);
     icon-shadow: 0 1px alpha(black, 0.5);
 }
 
-#panel_window .menubar .menuitem:insensitive {
+#panel_window .menubar > .menuitem:hover {
+    border-style: none;
+    background-color: alpha(white, 0.2);
+    background-image: none;
+    color: white;
+    box-shadow: none;
+}
+
+#panel_window .menubar > .menuitem *:hover {
+    color: white;
+}
+
+#panel_window .menubar > .menuitem:insensitive {
     color: alpha(white, 0.7);
 }
 
@@ -40,7 +53,13 @@
 #restart_dialog {
     border-style: none;
     border-radius: 5px;
-    background-color: @lightdm_bg_color;
+    background-image: linear-gradient(to bottom,
+                                      shade(@lightdm_bg_color, 1.12),
+                                      shade(@lightdm_bg_color, 1.02) 10%,
+                                      shade(@lightdm_bg_color, 0.99) 80%,
+                                      shade(@lightdm_bg_color, 0.90)
+                                      );
+
     color: @lightdm_fg_color;
 
     /* draw border using box-shadow */
@@ -68,7 +87,7 @@
 #login_window GtkComboBox .button:active:hover:focus {
     padding: 0;
     background: none;
-    border-style: none;                                      
+    border-style: none;
     box-shadow: none;
 }
 
@@ -126,7 +145,35 @@
 #shutdown_dialog .button,
 #restart_dialog .button {
     padding: 3px 15px;
+    border-width: 1px;
+    border-color: shade(@lightdm_bg_color, 0.8);
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom,
+                                      shade(@lightdm_bg_color, 1.02),
+                                      shade(@lightdm_bg_color, 0.95) 90%,
+                                      shade(@lightdm_bg_color, 0.90)
+                                      );
+
+    color: @lightdm_fg_color;
+                                      
+    box-shadow: inset 1px 0px alpha(@light_shadow, 0.1),
+                inset -1px 0px alpha(@light_shadow, 0.1),
+                inset 0px 1px alpha(@light_shadow, 0.1),
+                inset 0px -1px alpha(@light_shadow, 0.1);
+
     transition: all 150ms ease-out;
+}
+
+#login_window .button:hover,
+#login_window .button:active,
+#login_window .button:active:hover,
+#shutdown_dialog .button:hover
+#shutdown_dialog .button:active,
+#shutdown_dialog .button:active:hover,
+#restart_dialog .button:hover,
+#restart_dialog .button:active,
+#restart_dialog .button:active:hover {
+    border-color: shade(@lightdm_bg_color, 0.7);
 }
 
 #user_image {
@@ -134,19 +181,19 @@
     border-radius: 3px;
 
     /* draw border using box-shadow */
-    box-shadow: inset 1px 0 shade(@lightdm_bg_color, 0.75),
-                inset -1px 0 shade(@lightdm_bg_color, 0.75),
-                inset 0 1px shade(@lightdm_bg_color, 0.55),
-                inset 0 -1px shade(@lightdm_bg_color, 1.8);
+    box-shadow: inset 1px 0 shade(@lightdm_bg_color, 0.8),
+                inset -1px 0 shade(@lightdm_bg_color, 0.8),
+                inset 0 1px shade(@lightdm_bg_color, 0.8),
+                inset 0 -1px shade(@lightdm_bg_color, 0.8);
 }
 
 #user_image_border {
     border-radius: 3px;
     background-image: linear-gradient(to bottom,
-                                      shade(@lightdm_bg_color, 0.9),
+                                      shade(@lightdm_bg_color, 0.90),
                                       shade(@lightdm_bg_color, 0.98) 10%,
-                                      shade(@lightdm_bg_color, 1.0) 99%,
-                                      shade(@lightdm_bg_color, 1.0)
+                                      shade(@lightdm_bg_color, 1.02) 99%,
+                                      shade(@lightdm_bg_color, 1.01)
                                       );
 
     box-shadow: inset 0 1px shade(@lightdm_bg_color, 0.8),
@@ -154,8 +201,8 @@
 }
 
 #buttonbox_frame {
-    padding-top: 20px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 0;
     border-style: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
